@@ -22,7 +22,10 @@ int main() {
 	cout << myarray.front() << endl;
 	cout << myarray.back() << endl;
 	array< array<int, 2>, 2> a = {{	{1,2}, {4,5} }};
+	a.emplace(get<0>(a));
 	cout << a.max_size() <<endl;
 	cout << endl;
+	for (auto i: get<0>(a))
+		cout << i << endl;
 	return 0;
 }
