@@ -1,0 +1,1 @@
+CFLAGS:=-O3 -pthread -D_GNU_SOURCE

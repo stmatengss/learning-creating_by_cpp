@@ -18,13 +18,13 @@ extern "C" {
 #define PRINTMESSAGEVERS 1
 
 #if defined(__STDC__) || defined(__cplusplus)
-#define PRINTMESSAGE 2
+#define PRINTMESSAGE 1
 extern  int * printmessage_1(char **, CLIENT *);
 extern  int * printmessage_1_svc(char **, struct svc_req *);
 extern int messageprog_1_freeresult (SVCXPRT *, xdrproc_t, caddr_t);
 
 #else /* K&R C */
-#define PRINTMESSAGE 2
+#define PRINTMESSAGE 1
 extern  int * printmessage_1();
 extern  int * printmessage_1_svc();
 extern int messageprog_1_freeresult ();
