@@ -1,0 +1,1627 @@
+g++: error: unrecognized command line option '-atomic'
+In file included from /usr/include/c++/4.8/atomic:38:0,
+                 from test2.cpp:1:
+/usr/include/c++/4.8/bits/c++0x_warning.h:32:2: error: #error This file requires compiler and library support for the ISO C++ 2011 standard. This support is currently experimental, and must be enabled with the -std=c++11 or -std=gnu++11 compiler options.
+ #error This file requires compiler and library support for the \
+  ^
+In file included from /usr/include/c++/4.8/atomic:41:0,
+                 from test2.cpp:1:
+/usr/include/c++/4.8/bits/atomic_base.h:70:3: error: 'constexpr' does not name a type
+   constexpr memory_order
+   ^
+/usr/include/c++/4.8/bits/atomic_base.h:70:3: note: C++11 'constexpr' only available with -std=c++11 or -std=gnu++11
+/usr/include/c++/4.8/bits/atomic_base.h:76:3: error: 'constexpr' does not name a type
+   constexpr memory_order
+   ^
+/usr/include/c++/4.8/bits/atomic_base.h:76:3: note: C++11 'constexpr' only available with -std=c++11 or -std=gnu++11
+/usr/include/c++/4.8/bits/atomic_base.h:83:3: error: 'constexpr' does not name a type
+   constexpr memory_order
+   ^
+/usr/include/c++/4.8/bits/atomic_base.h:83:3: note: C++11 'constexpr' only available with -std=c++11 or -std=gnu++11
+/usr/include/c++/4.8/bits/atomic_base.h:90:3: error: 'constexpr' does not name a type
+   constexpr memory_order
+   ^
+/usr/include/c++/4.8/bits/atomic_base.h:90:3: note: C++11 'constexpr' only available with -std=c++11 or -std=gnu++11
+/usr/include/c++/4.8/bits/atomic_base.h:98:41: error: expected initializer before 'noexcept'
+   atomic_thread_fence(memory_order __m) noexcept
+                                         ^
+/usr/include/c++/4.8/bits/atomic_base.h:102:41: error: expected initializer before 'noexcept'
+   atomic_signal_fence(memory_order __m) noexcept
+                                         ^
+/usr/include/c++/4.8/bits/atomic_base.h:108:30: error: expected initializer before 'noexcept'
+     kill_dependency(_Tp __y) noexcept
+                              ^
+/usr/include/c++/4.8/bits/atomic_base.h:156:25: error: 'char16_t' was not declared in this scope
+   typedef __atomic_base<char16_t>    atomic_char16_t;
+                         ^
+/usr/include/c++/4.8/bits/atomic_base.h:156:33: error: template argument 1 is invalid
+   typedef __atomic_base<char16_t>    atomic_char16_t;
+                                 ^
+/usr/include/c++/4.8/bits/atomic_base.h:156:53: error: invalid type in declaration before ';' token
+   typedef __atomic_base<char16_t>    atomic_char16_t;
+                                                     ^
+/usr/include/c++/4.8/bits/atomic_base.h:159:25: error: 'char32_t' was not declared in this scope
+   typedef __atomic_base<char32_t>    atomic_char32_t;
+                         ^
+/usr/include/c++/4.8/bits/atomic_base.h:159:33: error: template argument 1 is invalid
+   typedef __atomic_base<char32_t>    atomic_char32_t;
+                                 ^
+/usr/include/c++/4.8/bits/atomic_base.h:159:53: error: invalid type in declaration before ';' token
+   typedef __atomic_base<char32_t>    atomic_char32_t;
+                                                     ^
+/usr/include/c++/4.8/bits/atomic_base.h:162:25: error: 'char32_t' was not declared in this scope
+   typedef __atomic_base<char32_t>    atomic_char32_t;
+                         ^
+/usr/include/c++/4.8/bits/atomic_base.h:162:33: error: template argument 1 is invalid
+   typedef __atomic_base<char32_t>    atomic_char32_t;
+                                 ^
+/usr/include/c++/4.8/bits/atomic_base.h:162:53: error: invalid type in declaration before ';' token
+   typedef __atomic_base<char32_t>    atomic_char32_t;
+                                                     ^
+/usr/include/c++/4.8/bits/atomic_base.h:273:17: error: expected ';' at end of member declaration
+     atomic_flag() noexcept = default;
+                 ^
+/usr/include/c++/4.8/bits/atomic_base.h:273:19: error: 'noexcept' does not name a type
+     atomic_flag() noexcept = default;
+                   ^
+/usr/include/c++/4.8/bits/atomic_base.h:274:18: error: expected ';' at end of member declaration
+     ~atomic_flag() noexcept = default;
+                  ^
+/usr/include/c++/4.8/bits/atomic_base.h:274:20: error: 'noexcept' does not name a type
+     ~atomic_flag() noexcept = default;
+                    ^
+/usr/include/c++/4.8/bits/atomic_base.h:280:5: error: 'constexpr' does not name a type
+     constexpr atomic_flag(bool __i) noexcept
+     ^
+/usr/include/c++/4.8/bits/atomic_base.h:280:5: note: C++11 'constexpr' only available with -std=c++11 or -std=gnu++11
+/usr/include/c++/4.8/bits/atomic_base.h:282:5: error: expected unqualified-id before '{' token
+     { }
+     ^
+/usr/include/c++/4.8/bits/atomic_base.h:285:57: error: expected ';' at end of member declaration
+     test_and_set(memory_order __m = memory_order_seq_cst) noexcept
+                                                         ^
+/usr/include/c++/4.8/bits/atomic_base.h:285:59: error: 'noexcept' does not name a type
+     test_and_set(memory_order __m = memory_order_seq_cst) noexcept
+                                                           ^
+/usr/include/c++/4.8/bits/atomic_base.h:291:59: error: expected ';' at end of member declaration
+     test_and_set(memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                           ^
+/usr/include/c++/4.8/bits/atomic_base.h:291:68: error: 'noexcept' does not name a type
+     test_and_set(memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                                    ^
+/usr/include/c++/4.8/bits/atomic_base.h:297:50: error: expected ';' at end of member declaration
+     clear(memory_order __m = memory_order_seq_cst) noexcept
+                                                  ^
+/usr/include/c++/4.8/bits/atomic_base.h:297:52: error: 'noexcept' does not name a type
+     clear(memory_order __m = memory_order_seq_cst) noexcept
+                                                    ^
+/usr/include/c++/4.8/bits/atomic_base.h:308:52: error: expected ';' at end of member declaration
+     clear(memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                    ^
+/usr/include/c++/4.8/bits/atomic_base.h:308:61: error: 'noexcept' does not name a type
+     clear(memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                             ^
+/usr/include/c++/4.8/bits/atomic_base.h:319:12: error: 'constexpr' does not name a type
+     static constexpr __atomic_flag_data_type
+            ^
+/usr/include/c++/4.8/bits/atomic_base.h:319:12: note: C++11 'constexpr' only available with -std=c++11 or -std=gnu++11
+/usr/include/c++/4.8/bits/atomic_base.h:357:21: error: expected ';' at end of member declaration
+       __atomic_base() noexcept = default;
+                     ^
+/usr/include/c++/4.8/bits/atomic_base.h:357:23: error: 'noexcept' does not name a type
+       __atomic_base() noexcept = default;
+                       ^
+/usr/include/c++/4.8/bits/atomic_base.h:358:22: error: expected ';' at end of member declaration
+       ~__atomic_base() noexcept = default;
+                      ^
+/usr/include/c++/4.8/bits/atomic_base.h:358:24: error: 'noexcept' does not name a type
+       ~__atomic_base() noexcept = default;
+                        ^
+/usr/include/c++/4.8/bits/atomic_base.h:364:7: error: 'constexpr' does not name a type
+       constexpr __atomic_base(__int_type __i) noexcept : _M_i (__i) { }
+       ^
+/usr/include/c++/4.8/bits/atomic_base.h:364:7: note: C++11 'constexpr' only available with -std=c++11 or -std=gnu++11
+/usr/include/c++/4.8/bits/atomic_base.h:366:29: error: expected ';' at end of member declaration
+       operator __int_type() const noexcept
+                             ^
+/usr/include/c++/4.8/bits/atomic_base.h:366:35: error: 'noexcept' does not name a type
+       operator __int_type() const noexcept
+                                   ^
+/usr/include/c++/4.8/bits/atomic_base.h:369:35: error: expected ';' at end of member declaration
+       operator __int_type() const volatile noexcept
+                                   ^
+/usr/include/c++/4.8/bits/atomic_base.h:369:44: error: 'noexcept' does not name a type
+       operator __int_type() const volatile noexcept
+                                            ^
+/usr/include/c++/4.8/bits/atomic_base.h:373:31: error: expected ';' at end of member declaration
+       operator=(__int_type __i) noexcept
+                               ^
+/usr/include/c++/4.8/bits/atomic_base.h:373:33: error: 'noexcept' does not name a type
+       operator=(__int_type __i) noexcept
+                                 ^
+/usr/include/c++/4.8/bits/atomic_base.h:380:33: error: expected ';' at end of member declaration
+       operator=(__int_type __i) volatile noexcept
+                                 ^
+/usr/include/c++/4.8/bits/atomic_base.h:380:42: error: 'noexcept' does not name a type
+       operator=(__int_type __i) volatile noexcept
+                                          ^
+/usr/include/c++/4.8/bits/atomic_base.h:387:21: error: expected ';' at end of member declaration
+       operator++(int) noexcept
+                     ^
+/usr/include/c++/4.8/bits/atomic_base.h:387:23: error: 'noexcept' does not name a type
+       operator++(int) noexcept
+                       ^
+/usr/include/c++/4.8/bits/atomic_base.h:391:23: error: expected ';' at end of member declaration
+       operator++(int) volatile noexcept
+                       ^
+/usr/include/c++/4.8/bits/atomic_base.h:391:32: error: 'noexcept' does not name a type
+       operator++(int) volatile noexcept
+                                ^
+/usr/include/c++/4.8/bits/atomic_base.h:395:21: error: expected ';' at end of member declaration
+       operator--(int) noexcept
+                     ^
+/usr/include/c++/4.8/bits/atomic_base.h:395:23: error: 'noexcept' does not name a type
+       operator--(int) noexcept
+                       ^
+/usr/include/c++/4.8/bits/atomic_base.h:399:23: error: expected ';' at end of member declaration
+       operator--(int) volatile noexcept
+                       ^
+/usr/include/c++/4.8/bits/atomic_base.h:399:32: error: 'noexcept' does not name a type
+       operator--(int) volatile noexcept
+                                ^
+/usr/include/c++/4.8/bits/atomic_base.h:403:18: error: expected ';' at end of member declaration
+       operator++() noexcept
+                  ^
+/usr/include/c++/4.8/bits/atomic_base.h:403:20: error: 'noexcept' does not name a type
+       operator++() noexcept
+                    ^
+/usr/include/c++/4.8/bits/atomic_base.h:407:20: error: expected ';' at end of member declaration
+       operator++() volatile noexcept
+                    ^
+/usr/include/c++/4.8/bits/atomic_base.h:407:29: error: 'noexcept' does not name a type
+       operator++() volatile noexcept
+                             ^
+/usr/include/c++/4.8/bits/atomic_base.h:411:18: error: expected ';' at end of member declaration
+       operator--() noexcept
+                  ^
+/usr/include/c++/4.8/bits/atomic_base.h:411:20: error: 'noexcept' does not name a type
+       operator--() noexcept
+                    ^
+/usr/include/c++/4.8/bits/atomic_base.h:415:20: error: expected ';' at end of member declaration
+       operator--() volatile noexcept
+                    ^
+/usr/include/c++/4.8/bits/atomic_base.h:415:29: error: 'noexcept' does not name a type
+       operator--() volatile noexcept
+                             ^
+/usr/include/c++/4.8/bits/atomic_base.h:419:32: error: expected ';' at end of member declaration
+       operator+=(__int_type __i) noexcept
+                                ^
+/usr/include/c++/4.8/bits/atomic_base.h:419:34: error: 'noexcept' does not name a type
+       operator+=(__int_type __i) noexcept
+                                  ^
+/usr/include/c++/4.8/bits/atomic_base.h:423:34: error: expected ';' at end of member declaration
+       operator+=(__int_type __i) volatile noexcept
+                                  ^
+/usr/include/c++/4.8/bits/atomic_base.h:423:43: error: 'noexcept' does not name a type
+       operator+=(__int_type __i) volatile noexcept
+                                           ^
+/usr/include/c++/4.8/bits/atomic_base.h:427:32: error: expected ';' at end of member declaration
+       operator-=(__int_type __i) noexcept
+                                ^
+/usr/include/c++/4.8/bits/atomic_base.h:427:34: error: 'noexcept' does not name a type
+       operator-=(__int_type __i) noexcept
+                                  ^
+/usr/include/c++/4.8/bits/atomic_base.h:431:34: error: expected ';' at end of member declaration
+       operator-=(__int_type __i) volatile noexcept
+                                  ^
+/usr/include/c++/4.8/bits/atomic_base.h:431:43: error: 'noexcept' does not name a type
+       operator-=(__int_type __i) volatile noexcept
+                                           ^
+/usr/include/c++/4.8/bits/atomic_base.h:435:32: error: expected ';' at end of member declaration
+       operator&=(__int_type __i) noexcept
+                                ^
+/usr/include/c++/4.8/bits/atomic_base.h:435:34: error: 'noexcept' does not name a type
+       operator&=(__int_type __i) noexcept
+                                  ^
+/usr/include/c++/4.8/bits/atomic_base.h:439:34: error: expected ';' at end of member declaration
+       operator&=(__int_type __i) volatile noexcept
+                                  ^
+/usr/include/c++/4.8/bits/atomic_base.h:439:43: error: 'noexcept' does not name a type
+       operator&=(__int_type __i) volatile noexcept
+                                           ^
+/usr/include/c++/4.8/bits/atomic_base.h:443:32: error: expected ';' at end of member declaration
+       operator|=(__int_type __i) noexcept
+                                ^
+/usr/include/c++/4.8/bits/atomic_base.h:443:34: error: 'noexcept' does not name a type
+       operator|=(__int_type __i) noexcept
+                                  ^
+/usr/include/c++/4.8/bits/atomic_base.h:447:34: error: expected ';' at end of member declaration
+       operator|=(__int_type __i) volatile noexcept
+                                  ^
+/usr/include/c++/4.8/bits/atomic_base.h:447:43: error: 'noexcept' does not name a type
+       operator|=(__int_type __i) volatile noexcept
+                                           ^
+/usr/include/c++/4.8/bits/atomic_base.h:451:32: error: expected ';' at end of member declaration
+       operator^=(__int_type __i) noexcept
+                                ^
+/usr/include/c++/4.8/bits/atomic_base.h:451:34: error: 'noexcept' does not name a type
+       operator^=(__int_type __i) noexcept
+                                  ^
+/usr/include/c++/4.8/bits/atomic_base.h:455:34: error: expected ';' at end of member declaration
+       operator^=(__int_type __i) volatile noexcept
+                                  ^
+/usr/include/c++/4.8/bits/atomic_base.h:455:43: error: 'noexcept' does not name a type
+       operator^=(__int_type __i) volatile noexcept
+                                           ^
+/usr/include/c++/4.8/bits/atomic_base.h:459:22: error: expected ';' at end of member declaration
+       is_lock_free() const noexcept
+                      ^
+/usr/include/c++/4.8/bits/atomic_base.h:459:28: error: 'noexcept' does not name a type
+       is_lock_free() const noexcept
+                            ^
+/usr/include/c++/4.8/bits/atomic_base.h:463:28: error: expected ';' at end of member declaration
+       is_lock_free() const volatile noexcept
+                            ^
+/usr/include/c++/4.8/bits/atomic_base.h:463:37: error: 'noexcept' does not name a type
+       is_lock_free() const volatile noexcept
+                                     ^
+/usr/include/c++/4.8/bits/atomic_base.h:467:68: error: expected ';' at end of member declaration
+       store(__int_type __i, memory_order __m = memory_order_seq_cst) noexcept
+                                                                    ^
+/usr/include/c++/4.8/bits/atomic_base.h:467:70: error: 'noexcept' does not name a type
+       store(__int_type __i, memory_order __m = memory_order_seq_cst) noexcept
+                                                                      ^
+/usr/include/c++/4.8/bits/atomic_base.h:479:47: error: expected ';' at end of member declaration
+      memory_order __m = memory_order_seq_cst) volatile noexcept
+                                               ^
+/usr/include/c++/4.8/bits/atomic_base.h:479:56: error: 'noexcept' does not name a type
+      memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                        ^
+/usr/include/c++/4.8/bits/atomic_base.h:490:53: error: expected ';' at end of member declaration
+       load(memory_order __m = memory_order_seq_cst) const noexcept
+                                                     ^
+/usr/include/c++/4.8/bits/atomic_base.h:490:59: error: 'noexcept' does not name a type
+       load(memory_order __m = memory_order_seq_cst) const noexcept
+                                                           ^
+/usr/include/c++/4.8/bits/atomic_base.h:500:59: error: expected ';' at end of member declaration
+       load(memory_order __m = memory_order_seq_cst) const volatile noexcept
+                                                           ^
+/usr/include/c++/4.8/bits/atomic_base.h:500:68: error: 'noexcept' does not name a type
+       load(memory_order __m = memory_order_seq_cst) const volatile noexcept
+                                                                    ^
+/usr/include/c++/4.8/bits/atomic_base.h:511:48: error: expected ';' at end of member declaration
+         memory_order __m = memory_order_seq_cst) noexcept
+                                                ^
+/usr/include/c++/4.8/bits/atomic_base.h:511:50: error: 'noexcept' does not name a type
+         memory_order __m = memory_order_seq_cst) noexcept
+                                                  ^
+/usr/include/c++/4.8/bits/atomic_base.h:519:50: error: expected ';' at end of member declaration
+         memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                  ^
+/usr/include/c++/4.8/bits/atomic_base.h:519:59: error: 'noexcept' does not name a type
+         memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                           ^
+/usr/include/c++/4.8/bits/atomic_base.h:526:44: error: expected ';' at end of member declaration
+        memory_order __m1, memory_order __m2) noexcept
+                                            ^
+/usr/include/c++/4.8/bits/atomic_base.h:526:46: error: 'noexcept' does not name a type
+        memory_order __m1, memory_order __m2) noexcept
+                                              ^
+/usr/include/c++/4.8/bits/atomic_base.h:540:27: error: expected ';' at end of member declaration
+        memory_order __m2) volatile noexcept
+                           ^
+/usr/include/c++/4.8/bits/atomic_base.h:540:36: error: 'noexcept' does not name a type
+        memory_order __m2) volatile noexcept
+                                    ^
+/usr/include/c++/4.8/bits/atomic_base.h:553:47: error: expected ';' at end of member declaration
+        memory_order __m = memory_order_seq_cst) noexcept
+                                               ^
+/usr/include/c++/4.8/bits/atomic_base.h:553:49: error: 'noexcept' does not name a type
+        memory_order __m = memory_order_seq_cst) noexcept
+                                                 ^
+/usr/include/c++/4.8/bits/atomic_base.h:561:47: error: expected ';' at end of member declaration
+      memory_order __m = memory_order_seq_cst) volatile noexcept
+                                               ^
+/usr/include/c++/4.8/bits/atomic_base.h:561:56: error: 'noexcept' does not name a type
+      memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                        ^
+/usr/include/c++/4.8/bits/atomic_base.h:569:46: error: expected ';' at end of member declaration
+          memory_order __m1, memory_order __m2) noexcept
+                                              ^
+/usr/include/c++/4.8/bits/atomic_base.h:569:48: error: 'noexcept' does not name a type
+          memory_order __m1, memory_order __m2) noexcept
+                                                ^
+/usr/include/c++/4.8/bits/atomic_base.h:583:29: error: expected ';' at end of member declaration
+          memory_order __m2) volatile noexcept
+                             ^
+/usr/include/c++/4.8/bits/atomic_base.h:583:38: error: 'noexcept' does not name a type
+          memory_order __m2) volatile noexcept
+                                      ^
+/usr/include/c++/4.8/bits/atomic_base.h:597:49: error: expected ';' at end of member declaration
+          memory_order __m = memory_order_seq_cst) noexcept
+                                                 ^
+/usr/include/c++/4.8/bits/atomic_base.h:597:51: error: 'noexcept' does not name a type
+          memory_order __m = memory_order_seq_cst) noexcept
+                                                   ^
+/usr/include/c++/4.8/bits/atomic_base.h:605:45: error: expected ';' at end of member declaration
+    memory_order __m = memory_order_seq_cst) volatile noexcept
+                                             ^
+/usr/include/c++/4.8/bits/atomic_base.h:605:54: error: 'noexcept' does not name a type
+    memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                      ^
+/usr/include/c++/4.8/bits/atomic_base.h:613:42: error: expected ';' at end of member declaration
+   memory_order __m = memory_order_seq_cst) noexcept
+                                          ^
+/usr/include/c++/4.8/bits/atomic_base.h:613:44: error: 'noexcept' does not name a type
+   memory_order __m = memory_order_seq_cst) noexcept
+                                            ^
+/usr/include/c++/4.8/bits/atomic_base.h:618:44: error: expected ';' at end of member declaration
+   memory_order __m = memory_order_seq_cst) volatile noexcept
+                                            ^
+/usr/include/c++/4.8/bits/atomic_base.h:618:53: error: 'noexcept' does not name a type
+   memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                     ^
+/usr/include/c++/4.8/bits/atomic_base.h:623:42: error: expected ';' at end of member declaration
+   memory_order __m = memory_order_seq_cst) noexcept
+                                          ^
+/usr/include/c++/4.8/bits/atomic_base.h:623:44: error: 'noexcept' does not name a type
+   memory_order __m = memory_order_seq_cst) noexcept
+                                            ^
+/usr/include/c++/4.8/bits/atomic_base.h:628:44: error: expected ';' at end of member declaration
+   memory_order __m = memory_order_seq_cst) volatile noexcept
+                                            ^
+/usr/include/c++/4.8/bits/atomic_base.h:628:53: error: 'noexcept' does not name a type
+   memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                     ^
+/usr/include/c++/4.8/bits/atomic_base.h:633:42: error: expected ';' at end of member declaration
+   memory_order __m = memory_order_seq_cst) noexcept
+                                          ^
+/usr/include/c++/4.8/bits/atomic_base.h:633:44: error: 'noexcept' does not name a type
+   memory_order __m = memory_order_seq_cst) noexcept
+                                            ^
+/usr/include/c++/4.8/bits/atomic_base.h:638:44: error: expected ';' at end of member declaration
+   memory_order __m = memory_order_seq_cst) volatile noexcept
+                                            ^
+/usr/include/c++/4.8/bits/atomic_base.h:638:53: error: 'noexcept' does not name a type
+   memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                     ^
+/usr/include/c++/4.8/bits/atomic_base.h:643:48: error: expected ';' at end of member declaration
+         memory_order __m = memory_order_seq_cst) noexcept
+                                                ^
+/usr/include/c++/4.8/bits/atomic_base.h:643:50: error: 'noexcept' does not name a type
+         memory_order __m = memory_order_seq_cst) noexcept
+                                                  ^
+/usr/include/c++/4.8/bits/atomic_base.h:648:50: error: expected ';' at end of member declaration
+         memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                  ^
+/usr/include/c++/4.8/bits/atomic_base.h:648:59: error: 'noexcept' does not name a type
+         memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                           ^
+/usr/include/c++/4.8/bits/atomic_base.h:653:42: error: expected ';' at end of member declaration
+   memory_order __m = memory_order_seq_cst) noexcept
+                                          ^
+/usr/include/c++/4.8/bits/atomic_base.h:653:44: error: 'noexcept' does not name a type
+   memory_order __m = memory_order_seq_cst) noexcept
+                                            ^
+/usr/include/c++/4.8/bits/atomic_base.h:658:44: error: expected ';' at end of member declaration
+   memory_order __m = memory_order_seq_cst) volatile noexcept
+                                            ^
+/usr/include/c++/4.8/bits/atomic_base.h:658:53: error: 'noexcept' does not name a type
+   memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                     ^
+/usr/include/c++/4.8/bits/atomic_base.h:673:7: error: 'constexpr' does not name a type
+       constexpr ptrdiff_t
+       ^
+/usr/include/c++/4.8/bits/atomic_base.h:673:7: note: C++11 'constexpr' only available with -std=c++11 or -std=gnu++11
+/usr/include/c++/4.8/bits/atomic_base.h:676:7: error: 'constexpr' does not name a type
+       constexpr ptrdiff_t
+       ^
+/usr/include/c++/4.8/bits/atomic_base.h:676:7: note: C++11 'constexpr' only available with -std=c++11 or -std=gnu++11
+/usr/include/c++/4.8/bits/atomic_base.h:680:21: error: expected ';' at end of member declaration
+       __atomic_base() noexcept = default;
+                     ^
+/usr/include/c++/4.8/bits/atomic_base.h:680:23: error: 'noexcept' does not name a type
+       __atomic_base() noexcept = default;
+                       ^
+/usr/include/c++/4.8/bits/atomic_base.h:681:22: error: expected ';' at end of member declaration
+       ~__atomic_base() noexcept = default;
+                      ^
+/usr/include/c++/4.8/bits/atomic_base.h:681:24: error: 'noexcept' does not name a type
+       ~__atomic_base() noexcept = default;
+                        ^
+/usr/include/c++/4.8/bits/atomic_base.h:687:7: error: 'constexpr' does not name a type
+       constexpr __atomic_base(__pointer_type __p) noexcept : _M_p (__p) { }
+       ^
+/usr/include/c++/4.8/bits/atomic_base.h:687:7: note: C++11 'constexpr' only available with -std=c++11 or -std=gnu++11
+/usr/include/c++/4.8/bits/atomic_base.h:689:33: error: expected ';' at end of member declaration
+       operator __pointer_type() const noexcept
+                                 ^
+/usr/include/c++/4.8/bits/atomic_base.h:689:39: error: 'noexcept' does not name a type
+       operator __pointer_type() const noexcept
+                                       ^
+/usr/include/c++/4.8/bits/atomic_base.h:692:39: error: expected ';' at end of member declaration
+       operator __pointer_type() const volatile noexcept
+                                       ^
+/usr/include/c++/4.8/bits/atomic_base.h:692:48: error: 'noexcept' does not name a type
+       operator __pointer_type() const volatile noexcept
+                                                ^
+/usr/include/c++/4.8/bits/atomic_base.h:696:35: error: expected ';' at end of member declaration
+       operator=(__pointer_type __p) noexcept
+                                   ^
+/usr/include/c++/4.8/bits/atomic_base.h:696:37: error: 'noexcept' does not name a type
+       operator=(__pointer_type __p) noexcept
+                                     ^
+/usr/include/c++/4.8/bits/atomic_base.h:703:37: error: expected ';' at end of member declaration
+       operator=(__pointer_type __p) volatile noexcept
+                                     ^
+/usr/include/c++/4.8/bits/atomic_base.h:703:46: error: 'noexcept' does not name a type
+       operator=(__pointer_type __p) volatile noexcept
+                                              ^
+/usr/include/c++/4.8/bits/atomic_base.h:710:21: error: expected ';' at end of member declaration
+       operator++(int) noexcept
+                     ^
+/usr/include/c++/4.8/bits/atomic_base.h:710:23: error: 'noexcept' does not name a type
+       operator++(int) noexcept
+                       ^
+/usr/include/c++/4.8/bits/atomic_base.h:714:23: error: expected ';' at end of member declaration
+       operator++(int) volatile noexcept
+                       ^
+/usr/include/c++/4.8/bits/atomic_base.h:714:32: error: 'noexcept' does not name a type
+       operator++(int) volatile noexcept
+                                ^
+/usr/include/c++/4.8/bits/atomic_base.h:718:21: error: expected ';' at end of member declaration
+       operator--(int) noexcept
+                     ^
+/usr/include/c++/4.8/bits/atomic_base.h:718:23: error: 'noexcept' does not name a type
+       operator--(int) noexcept
+                       ^
+/usr/include/c++/4.8/bits/atomic_base.h:722:23: error: expected ';' at end of member declaration
+       operator--(int) volatile noexcept
+                       ^
+/usr/include/c++/4.8/bits/atomic_base.h:722:32: error: 'noexcept' does not name a type
+       operator--(int) volatile noexcept
+                                ^
+/usr/include/c++/4.8/bits/atomic_base.h:726:18: error: expected ';' at end of member declaration
+       operator++() noexcept
+                  ^
+/usr/include/c++/4.8/bits/atomic_base.h:726:20: error: 'noexcept' does not name a type
+       operator++() noexcept
+                    ^
+/usr/include/c++/4.8/bits/atomic_base.h:731:20: error: expected ';' at end of member declaration
+       operator++() volatile noexcept
+                    ^
+/usr/include/c++/4.8/bits/atomic_base.h:731:29: error: 'noexcept' does not name a type
+       operator++() volatile noexcept
+                             ^
+/usr/include/c++/4.8/bits/atomic_base.h:736:18: error: expected ';' at end of member declaration
+       operator--() noexcept
+                  ^
+/usr/include/c++/4.8/bits/atomic_base.h:736:20: error: 'noexcept' does not name a type
+       operator--() noexcept
+                    ^
+/usr/include/c++/4.8/bits/atomic_base.h:741:20: error: expected ';' at end of member declaration
+       operator--() volatile noexcept
+                    ^
+/usr/include/c++/4.8/bits/atomic_base.h:741:29: error: 'noexcept' does not name a type
+       operator--() volatile noexcept
+                             ^
+/usr/include/c++/4.8/bits/atomic_base.h:746:31: error: expected ';' at end of member declaration
+       operator+=(ptrdiff_t __d) noexcept
+                               ^
+/usr/include/c++/4.8/bits/atomic_base.h:746:33: error: 'noexcept' does not name a type
+       operator+=(ptrdiff_t __d) noexcept
+                                 ^
+/usr/include/c++/4.8/bits/atomic_base.h:751:33: error: expected ';' at end of member declaration
+       operator+=(ptrdiff_t __d) volatile noexcept
+                                 ^
+/usr/include/c++/4.8/bits/atomic_base.h:751:42: error: 'noexcept' does not name a type
+       operator+=(ptrdiff_t __d) volatile noexcept
+                                          ^
+/usr/include/c++/4.8/bits/atomic_base.h:756:31: error: expected ';' at end of member declaration
+       operator-=(ptrdiff_t __d) noexcept
+                               ^
+/usr/include/c++/4.8/bits/atomic_base.h:756:33: error: 'noexcept' does not name a type
+       operator-=(ptrdiff_t __d) noexcept
+                                 ^
+/usr/include/c++/4.8/bits/atomic_base.h:761:33: error: expected ';' at end of member declaration
+       operator-=(ptrdiff_t __d) volatile noexcept
+                                 ^
+/usr/include/c++/4.8/bits/atomic_base.h:761:42: error: 'noexcept' does not name a type
+       operator-=(ptrdiff_t __d) volatile noexcept
+                                          ^
+/usr/include/c++/4.8/bits/atomic_base.h:766:22: error: expected ';' at end of member declaration
+       is_lock_free() const noexcept
+                      ^
+/usr/include/c++/4.8/bits/atomic_base.h:766:28: error: 'noexcept' does not name a type
+       is_lock_free() const noexcept
+                            ^
+/usr/include/c++/4.8/bits/atomic_base.h:770:28: error: expected ';' at end of member declaration
+       is_lock_free() const volatile noexcept
+                            ^
+/usr/include/c++/4.8/bits/atomic_base.h:770:37: error: 'noexcept' does not name a type
+       is_lock_free() const volatile noexcept
+                                     ^
+/usr/include/c++/4.8/bits/atomic_base.h:775:45: error: expected ';' at end of member declaration
+      memory_order __m = memory_order_seq_cst) noexcept
+                                             ^
+/usr/include/c++/4.8/bits/atomic_base.h:775:47: error: 'noexcept' does not name a type
+      memory_order __m = memory_order_seq_cst) noexcept
+                                               ^
+/usr/include/c++/4.8/bits/atomic_base.h:788:47: error: expected ';' at end of member declaration
+      memory_order __m = memory_order_seq_cst) volatile noexcept
+                                               ^
+/usr/include/c++/4.8/bits/atomic_base.h:788:56: error: 'noexcept' does not name a type
+      memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                        ^
+/usr/include/c++/4.8/bits/atomic_base.h:799:53: error: expected ';' at end of member declaration
+       load(memory_order __m = memory_order_seq_cst) const noexcept
+                                                     ^
+/usr/include/c++/4.8/bits/atomic_base.h:799:59: error: 'noexcept' does not name a type
+       load(memory_order __m = memory_order_seq_cst) const noexcept
+                                                           ^
+/usr/include/c++/4.8/bits/atomic_base.h:809:59: error: expected ';' at end of member declaration
+       load(memory_order __m = memory_order_seq_cst) const volatile noexcept
+                                                           ^
+/usr/include/c++/4.8/bits/atomic_base.h:809:68: error: 'noexcept' does not name a type
+       load(memory_order __m = memory_order_seq_cst) const volatile noexcept
+                                                                    ^
+/usr/include/c++/4.8/bits/atomic_base.h:820:48: error: expected ';' at end of member declaration
+         memory_order __m = memory_order_seq_cst) noexcept
+                                                ^
+/usr/include/c++/4.8/bits/atomic_base.h:820:50: error: 'noexcept' does not name a type
+         memory_order __m = memory_order_seq_cst) noexcept
+                                                  ^
+/usr/include/c++/4.8/bits/atomic_base.h:828:50: error: expected ';' at end of member declaration
+         memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                  ^
+/usr/include/c++/4.8/bits/atomic_base.h:828:59: error: 'noexcept' does not name a type
+         memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                           ^
+/usr/include/c++/4.8/bits/atomic_base.h:836:27: error: expected ';' at end of member declaration
+          memory_order __m2) noexcept
+                           ^
+/usr/include/c++/4.8/bits/atomic_base.h:836:29: error: 'noexcept' does not name a type
+          memory_order __m2) noexcept
+                             ^
+/usr/include/c++/4.8/bits/atomic_base.h:850:29: error: expected ';' at end of member declaration
+          memory_order __m2) volatile noexcept
+                             ^
+/usr/include/c++/4.8/bits/atomic_base.h:850:38: error: 'noexcept' does not name a type
+          memory_order __m2) volatile noexcept
+                                      ^
+/usr/include/c++/4.8/bits/atomic_base.h:864:42: error: expected ';' at end of member declaration
+   memory_order __m = memory_order_seq_cst) noexcept
+                                          ^
+/usr/include/c++/4.8/bits/atomic_base.h:864:44: error: 'noexcept' does not name a type
+   memory_order __m = memory_order_seq_cst) noexcept
+                                            ^
+/usr/include/c++/4.8/bits/atomic_base.h:869:44: error: expected ';' at end of member declaration
+   memory_order __m = memory_order_seq_cst) volatile noexcept
+                                            ^
+/usr/include/c++/4.8/bits/atomic_base.h:869:53: error: 'noexcept' does not name a type
+   memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                     ^
+/usr/include/c++/4.8/bits/atomic_base.h:874:42: error: expected ';' at end of member declaration
+   memory_order __m = memory_order_seq_cst) noexcept
+                                          ^
+/usr/include/c++/4.8/bits/atomic_base.h:874:44: error: 'noexcept' does not name a type
+   memory_order __m = memory_order_seq_cst) noexcept
+                                            ^
+/usr/include/c++/4.8/bits/atomic_base.h:879:44: error: expected ';' at end of member declaration
+   memory_order __m = memory_order_seq_cst) volatile noexcept
+                                            ^
+/usr/include/c++/4.8/bits/atomic_base.h:879:53: error: 'noexcept' does not name a type
+   memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                     ^
+In file included from test2.cpp:1:0:
+/usr/include/c++/4.8/atomic:60:17: error: expected ';' at end of member declaration
+     atomic_bool() noexcept = default;
+                 ^
+/usr/include/c++/4.8/atomic:60:19: error: 'noexcept' does not name a type
+     atomic_bool() noexcept = default;
+                   ^
+/usr/include/c++/4.8/atomic:61:18: error: expected ';' at end of member declaration
+     ~atomic_bool() noexcept = default;
+                  ^
+/usr/include/c++/4.8/atomic:61:20: error: 'noexcept' does not name a type
+     ~atomic_bool() noexcept = default;
+                    ^
+/usr/include/c++/4.8/atomic:66:5: error: 'constexpr' does not name a type
+     constexpr atomic_bool(bool __i) noexcept : _M_base(__i) { }
+     ^
+/usr/include/c++/4.8/atomic:66:5: note: C++11 'constexpr' only available with -std=c++11 or -std=gnu++11
+/usr/include/c++/4.8/atomic:69:23: error: expected ';' at end of member declaration
+     operator=(bool __i) noexcept
+                       ^
+/usr/include/c++/4.8/atomic:69:25: error: 'noexcept' does not name a type
+     operator=(bool __i) noexcept
+                         ^
+/usr/include/c++/4.8/atomic:73:25: error: expected ';' at end of member declaration
+     operator=(bool __i) volatile noexcept
+                         ^
+/usr/include/c++/4.8/atomic:73:34: error: 'noexcept' does not name a type
+     operator=(bool __i) volatile noexcept
+                                  ^
+/usr/include/c++/4.8/atomic:76:21: error: expected ';' at end of member declaration
+     operator bool() const noexcept
+                     ^
+/usr/include/c++/4.8/atomic:76:27: error: 'noexcept' does not name a type
+     operator bool() const noexcept
+                           ^
+/usr/include/c++/4.8/atomic:79:27: error: expected ';' at end of member declaration
+     operator bool() const volatile noexcept
+                           ^
+/usr/include/c++/4.8/atomic:79:36: error: 'noexcept' does not name a type
+     operator bool() const volatile noexcept
+                                    ^
+/usr/include/c++/4.8/atomic:83:20: error: expected ';' at end of member declaration
+     is_lock_free() const noexcept { return _M_base.is_lock_free(); }
+                    ^
+/usr/include/c++/4.8/atomic:83:26: error: 'noexcept' does not name a type
+     is_lock_free() const noexcept { return _M_base.is_lock_free(); }
+                          ^
+/usr/include/c++/4.8/atomic:86:26: error: expected ';' at end of member declaration
+     is_lock_free() const volatile noexcept { return _M_base.is_lock_free(); }
+                          ^
+/usr/include/c++/4.8/atomic:86:35: error: 'noexcept' does not name a type
+     is_lock_free() const volatile noexcept { return _M_base.is_lock_free(); }
+                                   ^
+/usr/include/c++/4.8/atomic:89:60: error: expected ';' at end of member declaration
+     store(bool __i, memory_order __m = memory_order_seq_cst) noexcept
+                                                            ^
+/usr/include/c++/4.8/atomic:89:62: error: 'noexcept' does not name a type
+     store(bool __i, memory_order __m = memory_order_seq_cst) noexcept
+                                                              ^
+/usr/include/c++/4.8/atomic:93:62: error: expected ';' at end of member declaration
+     store(bool __i, memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                              ^
+/usr/include/c++/4.8/atomic:93:71: error: 'noexcept' does not name a type
+     store(bool __i, memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                                       ^
+/usr/include/c++/4.8/atomic:97:51: error: expected ';' at end of member declaration
+     load(memory_order __m = memory_order_seq_cst) const noexcept
+                                                   ^
+/usr/include/c++/4.8/atomic:97:57: error: 'noexcept' does not name a type
+     load(memory_order __m = memory_order_seq_cst) const noexcept
+                                                         ^
+/usr/include/c++/4.8/atomic:101:57: error: expected ';' at end of member declaration
+     load(memory_order __m = memory_order_seq_cst) const volatile noexcept
+                                                         ^
+/usr/include/c++/4.8/atomic:101:66: error: 'noexcept' does not name a type
+     load(memory_order __m = memory_order_seq_cst) const volatile noexcept
+                                                                  ^
+/usr/include/c++/4.8/atomic:105:63: error: expected ';' at end of member declaration
+     exchange(bool __i, memory_order __m = memory_order_seq_cst) noexcept
+                                                               ^
+/usr/include/c++/4.8/atomic:105:65: error: 'noexcept' does not name a type
+     exchange(bool __i, memory_order __m = memory_order_seq_cst) noexcept
+                                                                 ^
+/usr/include/c++/4.8/atomic:110:48: error: expected ';' at end of member declaration
+       memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                ^
+/usr/include/c++/4.8/atomic:110:57: error: 'noexcept' does not name a type
+       memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                         ^
+/usr/include/c++/4.8/atomic:115:23: error: expected ';' at end of member declaration
+      memory_order __m2) noexcept
+                       ^
+/usr/include/c++/4.8/atomic:115:25: error: 'noexcept' does not name a type
+      memory_order __m2) noexcept
+                         ^
+/usr/include/c++/4.8/atomic:120:25: error: expected ';' at end of member declaration
+      memory_order __m2) volatile noexcept
+                         ^
+/usr/include/c++/4.8/atomic:120:34: error: 'noexcept' does not name a type
+      memory_order __m2) volatile noexcept
+                                  ^
+/usr/include/c++/4.8/atomic:125:45: error: expected ';' at end of member declaration
+      memory_order __m = memory_order_seq_cst) noexcept
+                                             ^
+/usr/include/c++/4.8/atomic:125:47: error: 'noexcept' does not name a type
+      memory_order __m = memory_order_seq_cst) noexcept
+                                               ^
+/usr/include/c++/4.8/atomic:130:49: error: expected ';' at end of member declaration
+        memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                 ^
+/usr/include/c++/4.8/atomic:130:58: error: 'noexcept' does not name a type
+        memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                          ^
+/usr/include/c++/4.8/atomic:135:25: error: expected ';' at end of member declaration
+        memory_order __m2) noexcept
+                         ^
+/usr/include/c++/4.8/atomic:135:27: error: 'noexcept' does not name a type
+        memory_order __m2) noexcept
+                           ^
+/usr/include/c++/4.8/atomic:140:27: error: expected ';' at end of member declaration
+        memory_order __m2) volatile noexcept
+                           ^
+/usr/include/c++/4.8/atomic:140:36: error: 'noexcept' does not name a type
+        memory_order __m2) volatile noexcept
+                                    ^
+/usr/include/c++/4.8/atomic:145:47: error: expected ';' at end of member declaration
+        memory_order __m = memory_order_seq_cst) noexcept
+                                               ^
+/usr/include/c++/4.8/atomic:145:49: error: 'noexcept' does not name a type
+        memory_order __m = memory_order_seq_cst) noexcept
+                                                 ^
+/usr/include/c++/4.8/atomic:150:48: error: expected ';' at end of member declaration
+       memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                ^
+/usr/include/c++/4.8/atomic:150:57: error: 'noexcept' does not name a type
+       memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                         ^
+/usr/include/c++/4.8/atomic:167:14: error: expected ';' at end of member declaration
+       atomic() noexcept = default;
+              ^
+/usr/include/c++/4.8/atomic:167:16: error: 'noexcept' does not name a type
+       atomic() noexcept = default;
+                ^
+/usr/include/c++/4.8/atomic:168:15: error: expected ';' at end of member declaration
+       ~atomic() noexcept = default;
+               ^
+/usr/include/c++/4.8/atomic:168:17: error: 'noexcept' does not name a type
+       ~atomic() noexcept = default;
+                 ^
+/usr/include/c++/4.8/atomic:173:7: error: 'constexpr' does not name a type
+       constexpr atomic(_Tp __i) noexcept : _M_i(__i) { }
+       ^
+/usr/include/c++/4.8/atomic:173:7: note: C++11 'constexpr' only available with -std=c++11 or -std=gnu++11
+/usr/include/c++/4.8/atomic:175:22: error: expected ';' at end of member declaration
+       operator _Tp() const noexcept
+                      ^
+/usr/include/c++/4.8/atomic:175:28: error: 'noexcept' does not name a type
+       operator _Tp() const noexcept
+                            ^
+/usr/include/c++/4.8/atomic:178:28: error: expected ';' at end of member declaration
+       operator _Tp() const volatile noexcept
+                            ^
+/usr/include/c++/4.8/atomic:178:37: error: 'noexcept' does not name a type
+       operator _Tp() const volatile noexcept
+                                     ^
+/usr/include/c++/4.8/atomic:182:24: error: expected ';' at end of member declaration
+       operator=(_Tp __i) noexcept 
+                        ^
+/usr/include/c++/4.8/atomic:182:26: error: 'noexcept' does not name a type
+       operator=(_Tp __i) noexcept 
+                          ^
+/usr/include/c++/4.8/atomic:186:26: error: expected ';' at end of member declaration
+       operator=(_Tp __i) volatile noexcept 
+                          ^
+/usr/include/c++/4.8/atomic:186:35: error: 'noexcept' does not name a type
+       operator=(_Tp __i) volatile noexcept 
+                                   ^
+/usr/include/c++/4.8/atomic:190:22: error: expected ';' at end of member declaration
+       is_lock_free() const noexcept
+                      ^
+/usr/include/c++/4.8/atomic:190:28: error: 'noexcept' does not name a type
+       is_lock_free() const noexcept
+                            ^
+/usr/include/c++/4.8/atomic:194:28: error: expected ';' at end of member declaration
+       is_lock_free() const volatile noexcept
+                            ^
+/usr/include/c++/4.8/atomic:194:37: error: 'noexcept' does not name a type
+       is_lock_free() const volatile noexcept
+                                     ^
+/usr/include/c++/4.8/atomic:198:60: error: expected ';' at end of member declaration
+       store(_Tp __i, memory_order _m = memory_order_seq_cst) noexcept
+                                                            ^
+/usr/include/c++/4.8/atomic:198:62: error: 'noexcept' does not name a type
+       store(_Tp __i, memory_order _m = memory_order_seq_cst) noexcept
+                                                              ^
+/usr/include/c++/4.8/atomic:202:62: error: expected ';' at end of member declaration
+       store(_Tp __i, memory_order _m = memory_order_seq_cst) volatile noexcept
+                                                              ^
+/usr/include/c++/4.8/atomic:202:71: error: 'noexcept' does not name a type
+       store(_Tp __i, memory_order _m = memory_order_seq_cst) volatile noexcept
+                                                                       ^
+/usr/include/c++/4.8/atomic:206:52: error: expected ';' at end of member declaration
+       load(memory_order _m = memory_order_seq_cst) const noexcept
+                                                    ^
+/usr/include/c++/4.8/atomic:206:58: error: 'noexcept' does not name a type
+       load(memory_order _m = memory_order_seq_cst) const noexcept
+                                                          ^
+/usr/include/c++/4.8/atomic:214:58: error: expected ';' at end of member declaration
+       load(memory_order _m = memory_order_seq_cst) const volatile noexcept
+                                                          ^
+/usr/include/c++/4.8/atomic:214:67: error: 'noexcept' does not name a type
+       load(memory_order _m = memory_order_seq_cst) const volatile noexcept
+                                                                   ^
+/usr/include/c++/4.8/atomic:222:63: error: expected ';' at end of member declaration
+       exchange(_Tp __i, memory_order _m = memory_order_seq_cst) noexcept
+                                                               ^
+/usr/include/c++/4.8/atomic:222:65: error: 'noexcept' does not name a type
+       exchange(_Tp __i, memory_order _m = memory_order_seq_cst) noexcept
+                                                                 ^
+/usr/include/c++/4.8/atomic:231:49: error: expected ';' at end of member declaration
+         memory_order _m = memory_order_seq_cst) volatile noexcept
+                                                 ^
+/usr/include/c++/4.8/atomic:231:58: error: 'noexcept' does not name a type
+         memory_order _m = memory_order_seq_cst) volatile noexcept
+                                                          ^
+/usr/include/c++/4.8/atomic:240:24: error: expected ';' at end of member declaration
+        memory_order __f) noexcept
+                        ^
+/usr/include/c++/4.8/atomic:240:26: error: 'noexcept' does not name a type
+        memory_order __f) noexcept
+                          ^
+/usr/include/c++/4.8/atomic:247:26: error: expected ';' at end of member declaration
+        memory_order __f) volatile noexcept
+                          ^
+/usr/include/c++/4.8/atomic:247:35: error: 'noexcept' does not name a type
+        memory_order __f) volatile noexcept
+                                   ^
+/usr/include/c++/4.8/atomic:254:47: error: expected ';' at end of member declaration
+        memory_order __m = memory_order_seq_cst) noexcept
+                                               ^
+/usr/include/c++/4.8/atomic:254:49: error: 'noexcept' does not name a type
+        memory_order __m = memory_order_seq_cst) noexcept
+                                                 ^
+/usr/include/c++/4.8/atomic:259:49: error: expected ';' at end of member declaration
+        memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                 ^
+/usr/include/c++/4.8/atomic:259:58: error: 'noexcept' does not name a type
+        memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                          ^
+/usr/include/c++/4.8/atomic:264:26: error: expected ';' at end of member declaration
+          memory_order __f) noexcept
+                          ^
+/usr/include/c++/4.8/atomic:264:28: error: 'noexcept' does not name a type
+          memory_order __f) noexcept
+                            ^
+/usr/include/c++/4.8/atomic:271:28: error: expected ';' at end of member declaration
+          memory_order __f) volatile noexcept
+                            ^
+/usr/include/c++/4.8/atomic:271:37: error: 'noexcept' does not name a type
+          memory_order __f) volatile noexcept
+                                     ^
+/usr/include/c++/4.8/atomic:278:50: error: expected ';' at end of member declaration
+           memory_order __m = memory_order_seq_cst) noexcept
+                                                  ^
+/usr/include/c++/4.8/atomic:278:52: error: 'noexcept' does not name a type
+           memory_order __m = memory_order_seq_cst) noexcept
+                                                    ^
+/usr/include/c++/4.8/atomic:283:49: error: expected ';' at end of member declaration
+        memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                 ^
+/usr/include/c++/4.8/atomic:283:58: error: 'noexcept' does not name a type
+        memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                          ^
+/usr/include/c++/4.8/atomic:296:14: error: expected ';' at end of member declaration
+       atomic() noexcept = default;
+              ^
+/usr/include/c++/4.8/atomic:296:16: error: 'noexcept' does not name a type
+       atomic() noexcept = default;
+                ^
+/usr/include/c++/4.8/atomic:297:15: error: expected ';' at end of member declaration
+       ~atomic() noexcept = default;
+               ^
+/usr/include/c++/4.8/atomic:297:17: error: 'noexcept' does not name a type
+       ~atomic() noexcept = default;
+                 ^
+/usr/include/c++/4.8/atomic:302:7: error: 'constexpr' does not name a type
+       constexpr atomic(__pointer_type __p) noexcept : _M_b(__p) { }
+       ^
+/usr/include/c++/4.8/atomic:302:7: note: C++11 'constexpr' only available with -std=c++11 or -std=gnu++11
+/usr/include/c++/4.8/atomic:304:33: error: expected ';' at end of member declaration
+       operator __pointer_type() const noexcept
+                                 ^
+/usr/include/c++/4.8/atomic:304:39: error: 'noexcept' does not name a type
+       operator __pointer_type() const noexcept
+                                       ^
+/usr/include/c++/4.8/atomic:307:39: error: expected ';' at end of member declaration
+       operator __pointer_type() const volatile noexcept
+                                       ^
+/usr/include/c++/4.8/atomic:307:48: error: 'noexcept' does not name a type
+       operator __pointer_type() const volatile noexcept
+                                                ^
+/usr/include/c++/4.8/atomic:311:35: error: expected ';' at end of member declaration
+       operator=(__pointer_type __p) noexcept
+                                   ^
+/usr/include/c++/4.8/atomic:311:37: error: 'noexcept' does not name a type
+       operator=(__pointer_type __p) noexcept
+                                     ^
+/usr/include/c++/4.8/atomic:315:37: error: expected ';' at end of member declaration
+       operator=(__pointer_type __p) volatile noexcept
+                                     ^
+/usr/include/c++/4.8/atomic:315:46: error: 'noexcept' does not name a type
+       operator=(__pointer_type __p) volatile noexcept
+                                              ^
+/usr/include/c++/4.8/atomic:319:21: error: expected ';' at end of member declaration
+       operator++(int) noexcept
+                     ^
+/usr/include/c++/4.8/atomic:319:23: error: 'noexcept' does not name a type
+       operator++(int) noexcept
+                       ^
+/usr/include/c++/4.8/atomic:323:23: error: expected ';' at end of member declaration
+       operator++(int) volatile noexcept
+                       ^
+/usr/include/c++/4.8/atomic:323:32: error: 'noexcept' does not name a type
+       operator++(int) volatile noexcept
+                                ^
+/usr/include/c++/4.8/atomic:327:21: error: expected ';' at end of member declaration
+       operator--(int) noexcept
+                     ^
+/usr/include/c++/4.8/atomic:327:23: error: 'noexcept' does not name a type
+       operator--(int) noexcept
+                       ^
+/usr/include/c++/4.8/atomic:331:23: error: expected ';' at end of member declaration
+       operator--(int) volatile noexcept
+                       ^
+/usr/include/c++/4.8/atomic:331:32: error: 'noexcept' does not name a type
+       operator--(int) volatile noexcept
+                                ^
+/usr/include/c++/4.8/atomic:335:18: error: expected ';' at end of member declaration
+       operator++() noexcept
+                  ^
+/usr/include/c++/4.8/atomic:335:20: error: 'noexcept' does not name a type
+       operator++() noexcept
+                    ^
+/usr/include/c++/4.8/atomic:339:20: error: expected ';' at end of member declaration
+       operator++() volatile noexcept
+                    ^
+/usr/include/c++/4.8/atomic:339:29: error: 'noexcept' does not name a type
+       operator++() volatile noexcept
+                             ^
+/usr/include/c++/4.8/atomic:343:18: error: expected ';' at end of member declaration
+       operator--() noexcept
+                  ^
+/usr/include/c++/4.8/atomic:343:20: error: 'noexcept' does not name a type
+       operator--() noexcept
+                    ^
+/usr/include/c++/4.8/atomic:347:20: error: expected ';' at end of member declaration
+       operator--() volatile noexcept
+                    ^
+/usr/include/c++/4.8/atomic:347:29: error: 'noexcept' does not name a type
+       operator--() volatile noexcept
+                             ^
+/usr/include/c++/4.8/atomic:351:31: error: expected ';' at end of member declaration
+       operator+=(ptrdiff_t __d) noexcept
+                               ^
+/usr/include/c++/4.8/atomic:351:33: error: 'noexcept' does not name a type
+       operator+=(ptrdiff_t __d) noexcept
+                                 ^
+/usr/include/c++/4.8/atomic:355:33: error: expected ';' at end of member declaration
+       operator+=(ptrdiff_t __d) volatile noexcept
+                                 ^
+/usr/include/c++/4.8/atomic:355:42: error: 'noexcept' does not name a type
+       operator+=(ptrdiff_t __d) volatile noexcept
+                                          ^
+/usr/include/c++/4.8/atomic:359:31: error: expected ';' at end of member declaration
+       operator-=(ptrdiff_t __d) noexcept
+                               ^
+/usr/include/c++/4.8/atomic:359:33: error: 'noexcept' does not name a type
+       operator-=(ptrdiff_t __d) noexcept
+                                 ^
+/usr/include/c++/4.8/atomic:363:33: error: expected ';' at end of member declaration
+       operator-=(ptrdiff_t __d) volatile noexcept
+                                 ^
+/usr/include/c++/4.8/atomic:363:42: error: 'noexcept' does not name a type
+       operator-=(ptrdiff_t __d) volatile noexcept
+                                          ^
+/usr/include/c++/4.8/atomic:367:22: error: expected ';' at end of member declaration
+       is_lock_free() const noexcept
+                      ^
+/usr/include/c++/4.8/atomic:367:28: error: 'noexcept' does not name a type
+       is_lock_free() const noexcept
+                            ^
+/usr/include/c++/4.8/atomic:371:28: error: expected ';' at end of member declaration
+       is_lock_free() const volatile noexcept
+                            ^
+/usr/include/c++/4.8/atomic:371:37: error: 'noexcept' does not name a type
+       is_lock_free() const volatile noexcept
+                                     ^
+/usr/include/c++/4.8/atomic:376:45: error: expected ';' at end of member declaration
+      memory_order __m = memory_order_seq_cst) noexcept
+                                             ^
+/usr/include/c++/4.8/atomic:376:47: error: 'noexcept' does not name a type
+      memory_order __m = memory_order_seq_cst) noexcept
+                                               ^
+/usr/include/c++/4.8/atomic:381:47: error: expected ';' at end of member declaration
+      memory_order __m = memory_order_seq_cst) volatile noexcept
+                                               ^
+/usr/include/c++/4.8/atomic:381:56: error: 'noexcept' does not name a type
+      memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                        ^
+/usr/include/c++/4.8/atomic:385:53: error: expected ';' at end of member declaration
+       load(memory_order __m = memory_order_seq_cst) const noexcept
+                                                     ^
+/usr/include/c++/4.8/atomic:385:59: error: 'noexcept' does not name a type
+       load(memory_order __m = memory_order_seq_cst) const noexcept
+                                                           ^
+/usr/include/c++/4.8/atomic:389:59: error: expected ';' at end of member declaration
+       load(memory_order __m = memory_order_seq_cst) const volatile noexcept
+                                                           ^
+/usr/include/c++/4.8/atomic:389:68: error: 'noexcept' does not name a type
+       load(memory_order __m = memory_order_seq_cst) const volatile noexcept
+                                                                    ^
+/usr/include/c++/4.8/atomic:394:48: error: expected ';' at end of member declaration
+         memory_order __m = memory_order_seq_cst) noexcept
+                                                ^
+/usr/include/c++/4.8/atomic:394:50: error: 'noexcept' does not name a type
+         memory_order __m = memory_order_seq_cst) noexcept
+                                                  ^
+/usr/include/c++/4.8/atomic:399:50: error: expected ';' at end of member declaration
+         memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                  ^
+/usr/include/c++/4.8/atomic:399:59: error: 'noexcept' does not name a type
+         memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                           ^
+/usr/include/c++/4.8/atomic:404:44: error: expected ';' at end of member declaration
+        memory_order __m1, memory_order __m2) noexcept
+                                            ^
+/usr/include/c++/4.8/atomic:404:46: error: 'noexcept' does not name a type
+        memory_order __m1, memory_order __m2) noexcept
+                                              ^
+/usr/include/c++/4.8/atomic:410:27: error: expected ';' at end of member declaration
+        memory_order __m2) volatile noexcept
+                           ^
+/usr/include/c++/4.8/atomic:410:36: error: 'noexcept' does not name a type
+        memory_order __m2) volatile noexcept
+                                    ^
+/usr/include/c++/4.8/atomic:415:47: error: expected ';' at end of member declaration
+        memory_order __m = memory_order_seq_cst) noexcept
+                                               ^
+/usr/include/c++/4.8/atomic:415:49: error: 'noexcept' does not name a type
+        memory_order __m = memory_order_seq_cst) noexcept
+                                                 ^
+/usr/include/c++/4.8/atomic:423:48: error: expected ';' at end of member declaration
+       memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                ^
+/usr/include/c++/4.8/atomic:423:57: error: 'noexcept' does not name a type
+       memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                         ^
+/usr/include/c++/4.8/atomic:431:46: error: expected ';' at end of member declaration
+          memory_order __m1, memory_order __m2) noexcept
+                                              ^
+/usr/include/c++/4.8/atomic:431:48: error: 'noexcept' does not name a type
+          memory_order __m1, memory_order __m2) noexcept
+                                                ^
+/usr/include/c++/4.8/atomic:437:29: error: expected ';' at end of member declaration
+          memory_order __m2) volatile noexcept
+                             ^
+/usr/include/c++/4.8/atomic:437:38: error: 'noexcept' does not name a type
+          memory_order __m2) volatile noexcept
+                                      ^
+/usr/include/c++/4.8/atomic:442:49: error: expected ';' at end of member declaration
+          memory_order __m = memory_order_seq_cst) noexcept
+                                                 ^
+/usr/include/c++/4.8/atomic:442:51: error: 'noexcept' does not name a type
+          memory_order __m = memory_order_seq_cst) noexcept
+                                                   ^
+/usr/include/c++/4.8/atomic:450:48: error: expected ';' at end of member declaration
+       memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                ^
+/usr/include/c++/4.8/atomic:450:57: error: 'noexcept' does not name a type
+       memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                         ^
+/usr/include/c++/4.8/atomic:458:42: error: expected ';' at end of member declaration
+   memory_order __m = memory_order_seq_cst) noexcept
+                                          ^
+/usr/include/c++/4.8/atomic:458:44: error: 'noexcept' does not name a type
+   memory_order __m = memory_order_seq_cst) noexcept
+                                            ^
+/usr/include/c++/4.8/atomic:463:44: error: expected ';' at end of member declaration
+   memory_order __m = memory_order_seq_cst) volatile noexcept
+                                            ^
+/usr/include/c++/4.8/atomic:463:53: error: 'noexcept' does not name a type
+   memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                     ^
+/usr/include/c++/4.8/atomic:468:42: error: expected ';' at end of member declaration
+   memory_order __m = memory_order_seq_cst) noexcept
+                                          ^
+/usr/include/c++/4.8/atomic:468:44: error: 'noexcept' does not name a type
+   memory_order __m = memory_order_seq_cst) noexcept
+                                            ^
+/usr/include/c++/4.8/atomic:473:44: error: expected ';' at end of member declaration
+   memory_order __m = memory_order_seq_cst) volatile noexcept
+                                            ^
+/usr/include/c++/4.8/atomic:473:53: error: 'noexcept' does not name a type
+   memory_order __m = memory_order_seq_cst) volatile noexcept
+                                                     ^
+/usr/include/c++/4.8/atomic:485:14: error: expected ';' at end of member declaration
+       atomic() noexcept = default;
+              ^
+/usr/include/c++/4.8/atomic:485:16: error: 'noexcept' does not name a type
+       atomic() noexcept = default;
+                ^
+/usr/include/c++/4.8/atomic:486:15: error: expected ';' at end of member declaration
+       ~atomic() noexcept = default;
+               ^
+/usr/include/c++/4.8/atomic:486:17: error: 'noexcept' does not name a type
+       ~atomic() noexcept = default;
+                 ^
+/usr/include/c++/4.8/atomic:491:7: error: 'constexpr' does not name a type
+       constexpr atomic(__integral_type __i) noexcept : __base_type(__i) { }
+       ^
+/usr/include/c++/4.8/atomic:491:7: note: C++11 'constexpr' only available with -std=c++11 or -std=gnu++11
+/usr/include/c++/4.8/atomic:504:14: error: expected ';' at end of member declaration
+       atomic() noexcept = default;
+              ^
+/usr/include/c++/4.8/atomic:504:16: error: 'noexcept' does not name a type
+       atomic() noexcept = default;
+                ^
+/usr/include/c++/4.8/atomic:505:15: error: expected ';' at end of member declaration
+       ~atomic() noexcept = default;
+               ^
+/usr/include/c++/4.8/atomic:505:17: error: 'noexcept' does not name a type
+       ~atomic() noexcept = default;
+                 ^
+/usr/include/c++/4.8/atomic:510:7: error: 'constexpr' does not name a type
+       constexpr atomic(__integral_type __i) noexcept : __base_type(__i) { }
+       ^
+/usr/include/c++/4.8/atomic:510:7: note: C++11 'constexpr' only available with -std=c++11 or -std=gnu++11
+/usr/include/c++/4.8/atomic:523:14: error: expected ';' at end of member declaration
+       atomic() noexcept= default;
+              ^
+/usr/include/c++/4.8/atomic:523:16: error: 'noexcept' does not name a type
+       atomic() noexcept= default;
+                ^
+/usr/include/c++/4.8/atomic:524:15: error: expected ';' at end of member declaration
+       ~atomic() noexcept = default;
+               ^
+/usr/include/c++/4.8/atomic:524:17: error: 'noexcept' does not name a type
+       ~atomic() noexcept = default;
+                 ^
+/usr/include/c++/4.8/atomic:529:7: error: 'constexpr' does not name a type
+       constexpr atomic(__integral_type __i) noexcept : __base_type(__i) { }
+       ^
+/usr/include/c++/4.8/atomic:529:7: note: C++11 'constexpr' only available with -std=c++11 or -std=gnu++11
+/usr/include/c++/4.8/atomic:542:14: error: expected ';' at end of member declaration
+       atomic() noexcept= default;
+              ^
+/usr/include/c++/4.8/atomic:542:16: error: 'noexcept' does not name a type
+       atomic() noexcept= default;
+                ^
+/usr/include/c++/4.8/atomic:543:15: error: expected ';' at end of member declaration
+       ~atomic() noexcept = default;
+               ^
+/usr/include/c++/4.8/atomic:543:17: error: 'noexcept' does not name a type
+       ~atomic() noexcept = default;
+                 ^
+/usr/include/c++/4.8/atomic:548:7: error: 'constexpr' does not name a type
+       constexpr atomic(__integral_type __i) noexcept : __base_type(__i) { }
+       ^
+/usr/include/c++/4.8/atomic:548:7: note: C++11 'constexpr' only available with -std=c++11 or -std=gnu++11
+/usr/include/c++/4.8/atomic:561:14: error: expected ';' at end of member declaration
+       atomic() noexcept = default;
+              ^
+/usr/include/c++/4.8/atomic:561:16: error: 'noexcept' does not name a type
+       atomic() noexcept = default;
+                ^
+/usr/include/c++/4.8/atomic:562:15: error: expected ';' at end of member declaration
+       ~atomic() noexcept = default;
+               ^
+/usr/include/c++/4.8/atomic:562:17: error: 'noexcept' does not name a type
+       ~atomic() noexcept = default;
+                 ^
+/usr/include/c++/4.8/atomic:567:7: error: 'constexpr' does not name a type
+       constexpr atomic(__integral_type __i) noexcept : __base_type(__i) { }
+       ^
+/usr/include/c++/4.8/atomic:567:7: note: C++11 'constexpr' only available with -std=c++11 or -std=gnu++11
+/usr/include/c++/4.8/atomic:580:14: error: expected ';' at end of member declaration
+       atomic() noexcept = default;
+              ^
+/usr/include/c++/4.8/atomic:580:16: error: 'noexcept' does not name a type
+       atomic() noexcept = default;
+                ^
+/usr/include/c++/4.8/atomic:581:15: error: expected ';' at end of member declaration
+       ~atomic() noexcept = default;
+               ^
+/usr/include/c++/4.8/atomic:581:17: error: 'noexcept' does not name a type
+       ~atomic() noexcept = default;
+                 ^
+/usr/include/c++/4.8/atomic:586:7: error: 'constexpr' does not name a type
+       constexpr atomic(__integral_type __i) noexcept : __base_type(__i) { }
+       ^
+/usr/include/c++/4.8/atomic:586:7: note: C++11 'constexpr' only available with -std=c++11 or -std=gnu++11
+/usr/include/c++/4.8/atomic:599:14: error: expected ';' at end of member declaration
+       atomic() noexcept = default;
+              ^
+/usr/include/c++/4.8/atomic:599:16: error: 'noexcept' does not name a type
+       atomic() noexcept = default;
+                ^
+/usr/include/c++/4.8/atomic:600:15: error: expected ';' at end of member declaration
+       ~atomic() noexcept = default;
+               ^
+/usr/include/c++/4.8/atomic:600:17: error: 'noexcept' does not name a type
+       ~atomic() noexcept = default;
+                 ^
+/usr/include/c++/4.8/atomic:605:7: error: 'constexpr' does not name a type
+       constexpr atomic(__integral_type __i) noexcept : __base_type(__i) { }
+       ^
+/usr/include/c++/4.8/atomic:605:7: note: C++11 'constexpr' only available with -std=c++11 or -std=gnu++11
+/usr/include/c++/4.8/atomic:618:14: error: expected ';' at end of member declaration
+       atomic() noexcept = default;
+              ^
+/usr/include/c++/4.8/atomic:618:16: error: 'noexcept' does not name a type
+       atomic() noexcept = default;
+                ^
+/usr/include/c++/4.8/atomic:619:15: error: expected ';' at end of member declaration
+       ~atomic() noexcept = default;
+               ^
+/usr/include/c++/4.8/atomic:619:17: error: 'noexcept' does not name a type
+       ~atomic() noexcept = default;
+                 ^
+/usr/include/c++/4.8/atomic:624:7: error: 'constexpr' does not name a type
+       constexpr atomic(__integral_type __i) noexcept : __base_type(__i) { }
+       ^
+/usr/include/c++/4.8/atomic:624:7: note: C++11 'constexpr' only available with -std=c++11 or -std=gnu++11
+/usr/include/c++/4.8/atomic:637:14: error: expected ';' at end of member declaration
+       atomic() noexcept = default;
+              ^
+/usr/include/c++/4.8/atomic:637:16: error: 'noexcept' does not name a type
+       atomic() noexcept = default;
+                ^
+/usr/include/c++/4.8/atomic:638:15: error: expected ';' at end of member declaration
+       ~atomic() noexcept = default;
+               ^
+/usr/include/c++/4.8/atomic:638:17: error: 'noexcept' does not name a type
+       ~atomic() noexcept = default;
+                 ^
+/usr/include/c++/4.8/atomic:643:7: error: 'constexpr' does not name a type
+       constexpr atomic(__integral_type __i) noexcept : __base_type(__i) { }
+       ^
+/usr/include/c++/4.8/atomic:643:7: note: C++11 'constexpr' only available with -std=c++11 or -std=gnu++11
+/usr/include/c++/4.8/atomic:656:14: error: expected ';' at end of member declaration
+       atomic() noexcept = default;
+              ^
+/usr/include/c++/4.8/atomic:656:16: error: 'noexcept' does not name a type
+       atomic() noexcept = default;
+                ^
+/usr/include/c++/4.8/atomic:657:15: error: expected ';' at end of member declaration
+       ~atomic() noexcept = default;
+               ^
+/usr/include/c++/4.8/atomic:657:17: error: 'noexcept' does not name a type
+       ~atomic() noexcept = default;
+                 ^
+/usr/include/c++/4.8/atomic:662:7: error: 'constexpr' does not name a type
+       constexpr atomic(__integral_type __i) noexcept : __base_type(__i) { }
+       ^
+/usr/include/c++/4.8/atomic:662:7: note: C++11 'constexpr' only available with -std=c++11 or -std=gnu++11
+/usr/include/c++/4.8/atomic:675:14: error: expected ';' at end of member declaration
+       atomic() noexcept = default;
+              ^
+/usr/include/c++/4.8/atomic:675:16: error: 'noexcept' does not name a type
+       atomic() noexcept = default;
+                ^
+/usr/include/c++/4.8/atomic:676:15: error: expected ';' at end of member declaration
+       ~atomic() noexcept = default;
+               ^
+/usr/include/c++/4.8/atomic:676:17: error: 'noexcept' does not name a type
+       ~atomic() noexcept = default;
+                 ^
+/usr/include/c++/4.8/atomic:681:7: error: 'constexpr' does not name a type
+       constexpr atomic(__integral_type __i) noexcept : __base_type(__i) { }
+       ^
+/usr/include/c++/4.8/atomic:681:7: note: C++11 'constexpr' only available with -std=c++11 or -std=gnu++11
+/usr/include/c++/4.8/atomic:694:14: error: expected ';' at end of member declaration
+       atomic() noexcept = default;
+              ^
+/usr/include/c++/4.8/atomic:694:16: error: 'noexcept' does not name a type
+       atomic() noexcept = default;
+                ^
+/usr/include/c++/4.8/atomic:695:15: error: expected ';' at end of member declaration
+       ~atomic() noexcept = default;
+               ^
+/usr/include/c++/4.8/atomic:695:17: error: 'noexcept' does not name a type
+       ~atomic() noexcept = default;
+                 ^
+/usr/include/c++/4.8/atomic:700:7: error: 'constexpr' does not name a type
+       constexpr atomic(__integral_type __i) noexcept : __base_type(__i) { }
+       ^
+/usr/include/c++/4.8/atomic:700:7: note: C++11 'constexpr' only available with -std=c++11 or -std=gnu++11
+/usr/include/c++/4.8/atomic:713:14: error: expected ';' at end of member declaration
+       atomic() noexcept = default;
+              ^
+/usr/include/c++/4.8/atomic:713:16: error: 'noexcept' does not name a type
+       atomic() noexcept = default;
+                ^
+/usr/include/c++/4.8/atomic:714:15: error: expected ';' at end of member declaration
+       ~atomic() noexcept = default;
+               ^
+/usr/include/c++/4.8/atomic:714:17: error: 'noexcept' does not name a type
+       ~atomic() noexcept = default;
+                 ^
+/usr/include/c++/4.8/atomic:719:7: error: 'constexpr' does not name a type
+       constexpr atomic(__integral_type __i) noexcept : __base_type(__i) { }
+       ^
+/usr/include/c++/4.8/atomic:719:7: note: C++11 'constexpr' only available with -std=c++11 or -std=gnu++11
+/usr/include/c++/4.8/atomic:727:19: error: 'char16_t' was not declared in this scope
+     struct atomic<char16_t> : public atomic_char16_t
+                   ^
+/usr/include/c++/4.8/atomic:727:27: error: template argument 1 is invalid
+     struct atomic<char16_t> : public atomic_char16_t
+                           ^
+/usr/include/c++/4.8/atomic:728:5: error: expected class-name before '{' token
+     {
+     ^
+/usr/include/c++/4.8/atomic:746:19: error: 'char32_t' was not declared in this scope
+     struct atomic<char32_t> : public atomic_char32_t
+                   ^
+/usr/include/c++/4.8/atomic:746:27: error: template argument 1 is invalid
+     struct atomic<char32_t> : public atomic_char32_t
+                           ^
+/usr/include/c++/4.8/atomic:747:5: error: expected class-name before '{' token
+     {
+     ^
+/usr/include/c++/4.8/atomic:767:27: error: expected initializer before 'noexcept'
+         memory_order __m) noexcept
+                           ^
+/usr/include/c++/4.8/atomic:772:27: error: expected initializer before 'noexcept'
+         memory_order __m) noexcept
+                           ^
+/usr/include/c++/4.8/atomic:776:66: error: expected initializer before 'noexcept'
+   atomic_flag_clear_explicit(atomic_flag* __a, memory_order __m) noexcept
+                                                                  ^
+/usr/include/c++/4.8/atomic:781:27: error: expected initializer before 'noexcept'
+         memory_order __m) noexcept
+                           ^
+/usr/include/c++/4.8/atomic:785:46: error: expected initializer before 'noexcept'
+   atomic_flag_test_and_set(atomic_flag* __a) noexcept
+                                              ^
+/usr/include/c++/4.8/atomic:789:55: error: expected initializer before 'noexcept'
+   atomic_flag_test_and_set(volatile atomic_flag* __a) noexcept
+                                                       ^
+/usr/include/c++/4.8/atomic:793:39: error: expected initializer before 'noexcept'
+   atomic_flag_clear(atomic_flag* __a) noexcept
+                                       ^
+/usr/include/c++/4.8/atomic:797:48: error: expected initializer before 'noexcept'
+   atomic_flag_clear(volatile atomic_flag* __a) noexcept
+                                                ^
+/usr/include/c++/4.8/atomic:804:50: error: expected initializer before 'noexcept'
+     atomic_is_lock_free(const atomic<_ITp>* __a) noexcept
+                                                  ^
+/usr/include/c++/4.8/atomic:809:59: error: expected initializer before 'noexcept'
+     atomic_is_lock_free(const volatile atomic<_ITp>* __a) noexcept
+                                                           ^
+/usr/include/c++/4.8/atomic:814:46: error: expected initializer before 'noexcept'
+     atomic_init(atomic<_ITp>* __a, _ITp __i) noexcept;
+                                              ^
+/usr/include/c++/4.8/atomic:818:55: error: expected initializer before 'noexcept'
+     atomic_init(volatile atomic<_ITp>* __a, _ITp __i) noexcept;
+                                                       ^
+/usr/include/c++/4.8/atomic:823:24: error: expected initializer before 'noexcept'
+      memory_order __m) noexcept
+                        ^
+/usr/include/c++/4.8/atomic:829:24: error: expected initializer before 'noexcept'
+      memory_order __m) noexcept
+                        ^
+/usr/include/c++/4.8/atomic:834:69: error: expected initializer before 'noexcept'
+     atomic_load_explicit(const atomic<_ITp>* __a, memory_order __m) noexcept
+                                                                     ^
+/usr/include/c++/4.8/atomic:840:23: error: expected initializer before 'noexcept'
+     memory_order __m) noexcept
+                       ^
+/usr/include/c++/4.8/atomic:846:27: error: expected initializer before 'noexcept'
+         memory_order __m) noexcept
+                           ^
+/usr/include/c++/4.8/atomic:852:27: error: expected initializer before 'noexcept'
+         memory_order __m) noexcept
+                           ^
+/usr/include/c++/4.8/atomic:860:27: error: expected initializer before 'noexcept'
+        memory_order __m2) noexcept
+                           ^
+/usr/include/c++/4.8/atomic:868:27: error: expected initializer before 'noexcept'
+        memory_order __m2) noexcept
+                           ^
+/usr/include/c++/4.8/atomic:876:29: error: expected initializer before 'noexcept'
+          memory_order __m2) noexcept
+                             ^
+/usr/include/c++/4.8/atomic:884:29: error: expected initializer before 'noexcept'
+          memory_order __m2) noexcept
+                             ^
+/usr/include/c++/4.8/atomic:890:47: error: expected initializer before 'noexcept'
+     atomic_store(atomic<_ITp>* __a, _ITp __i) noexcept
+                                               ^
+/usr/include/c++/4.8/atomic:895:56: error: expected initializer before 'noexcept'
+     atomic_store(volatile atomic<_ITp>* __a, _ITp __i) noexcept
+                                                        ^
+/usr/include/c++/4.8/atomic:900:42: error: expected initializer before 'noexcept'
+     atomic_load(const atomic<_ITp>* __a) noexcept
+                                          ^
+/usr/include/c++/4.8/atomic:905:51: error: expected initializer before 'noexcept'
+     atomic_load(const volatile atomic<_ITp>* __a) noexcept
+                                                   ^
+/usr/include/c++/4.8/atomic:910:50: error: expected initializer before 'noexcept'
+     atomic_exchange(atomic<_ITp>* __a, _ITp __i) noexcept
+                                                  ^
+/usr/include/c++/4.8/atomic:915:59: error: expected initializer before 'noexcept'
+     atomic_exchange(volatile atomic<_ITp>* __a, _ITp __i) noexcept
+                                                           ^
+/usr/include/c++/4.8/atomic:921:29: error: expected initializer before 'noexcept'
+      _ITp* __i1, _ITp __i2) noexcept
+                             ^
+/usr/include/c++/4.8/atomic:931:29: error: expected initializer before 'noexcept'
+      _ITp* __i1, _ITp __i2) noexcept
+                             ^
+/usr/include/c++/4.8/atomic:941:31: error: expected initializer before 'noexcept'
+        _ITp* __i1, _ITp __i2) noexcept
+                               ^
+/usr/include/c++/4.8/atomic:951:31: error: expected initializer before 'noexcept'
+        _ITp* __i1, _ITp __i2) noexcept
+                               ^
+/usr/include/c++/4.8/atomic:965:28: error: expected initializer before 'noexcept'
+          memory_order __m) noexcept
+                            ^
+/usr/include/c++/4.8/atomic:971:28: error: expected initializer before 'noexcept'
+          memory_order __m) noexcept
+                            ^
+/usr/include/c++/4.8/atomic:977:28: error: expected initializer before 'noexcept'
+          memory_order __m) noexcept
+                            ^
+/usr/include/c++/4.8/atomic:983:28: error: expected initializer before 'noexcept'
+          memory_order __m) noexcept
+                            ^
+/usr/include/c++/4.8/atomic:989:28: error: expected initializer before 'noexcept'
+          memory_order __m) noexcept
+                            ^
+/usr/include/c++/4.8/atomic:995:28: error: expected initializer before 'noexcept'
+          memory_order __m) noexcept
+                            ^
+/usr/include/c++/4.8/atomic:1001:27: error: expected initializer before 'noexcept'
+         memory_order __m) noexcept
+                           ^
+/usr/include/c++/4.8/atomic:1007:27: error: expected initializer before 'noexcept'
+         memory_order __m) noexcept
+                           ^
+/usr/include/c++/4.8/atomic:1013:28: error: expected initializer before 'noexcept'
+          memory_order __m) noexcept
+                            ^
+/usr/include/c++/4.8/atomic:1019:28: error: expected initializer before 'noexcept'
+          memory_order __m) noexcept
+                            ^
+/usr/include/c++/4.8/atomic:1024:58: error: expected initializer before 'noexcept'
+     atomic_fetch_add(__atomic_base<_ITp>* __a, _ITp __i) noexcept
+                                                          ^
+/usr/include/c++/4.8/atomic:1029:67: error: expected initializer before 'noexcept'
+     atomic_fetch_add(volatile __atomic_base<_ITp>* __a, _ITp __i) noexcept
+                                                                   ^
+/usr/include/c++/4.8/atomic:1034:58: error: expected initializer before 'noexcept'
+     atomic_fetch_sub(__atomic_base<_ITp>* __a, _ITp __i) noexcept
+                                                          ^
+/usr/include/c++/4.8/atomic:1039:67: error: expected initializer before 'noexcept'
+     atomic_fetch_sub(volatile __atomic_base<_ITp>* __a, _ITp __i) noexcept
+                                                                   ^
+/usr/include/c++/4.8/atomic:1044:58: error: expected initializer before 'noexcept'
+     atomic_fetch_and(__atomic_base<_ITp>* __a, _ITp __i) noexcept
+                                                          ^
+/usr/include/c++/4.8/atomic:1049:67: error: expected initializer before 'noexcept'
+     atomic_fetch_and(volatile __atomic_base<_ITp>* __a, _ITp __i) noexcept
+                                                                   ^
+/usr/include/c++/4.8/atomic:1054:57: error: expected initializer before 'noexcept'
+     atomic_fetch_or(__atomic_base<_ITp>* __a, _ITp __i) noexcept
+                                                         ^
+/usr/include/c++/4.8/atomic:1059:66: error: expected initializer before 'noexcept'
+     atomic_fetch_or(volatile __atomic_base<_ITp>* __a, _ITp __i) noexcept
+                                                                  ^
+/usr/include/c++/4.8/atomic:1064:58: error: expected initializer before 'noexcept'
+     atomic_fetch_xor(__atomic_base<_ITp>* __a, _ITp __i) noexcept
+                                                          ^
+/usr/include/c++/4.8/atomic:1069:67: error: expected initializer before 'noexcept'
+     atomic_fetch_xor(volatile __atomic_base<_ITp>* __a, _ITp __i) noexcept
+                                                                   ^
+/usr/include/c++/4.8/atomic:1077:28: error: expected initializer before 'noexcept'
+          memory_order __m) noexcept
+                            ^
+/usr/include/c++/4.8/atomic:1083:28: error: expected initializer before 'noexcept'
+          memory_order __m) noexcept
+                            ^
+/usr/include/c++/4.8/atomic:1088:66: error: expected initializer before 'noexcept'
+     atomic_fetch_add(volatile atomic<_ITp*>* __a, ptrdiff_t __d) noexcept
+                                                                  ^
+/usr/include/c++/4.8/atomic:1093:57: error: expected initializer before 'noexcept'
+     atomic_fetch_add(atomic<_ITp*>* __a, ptrdiff_t __d) noexcept
+                                                         ^
+/usr/include/c++/4.8/atomic:1099:43: error: expected initializer before 'noexcept'
+          ptrdiff_t __d, memory_order __m) noexcept
+                                           ^
+/usr/include/c++/4.8/atomic:1105:28: error: expected initializer before 'noexcept'
+          memory_order __m) noexcept
+                            ^
+/usr/include/c++/4.8/atomic:1110:66: error: expected initializer before 'noexcept'
+     atomic_fetch_sub(volatile atomic<_ITp*>* __a, ptrdiff_t __d) noexcept
+                                                                  ^
+/usr/include/c++/4.8/atomic:1115:57: error: expected initializer before 'noexcept'
+     atomic_fetch_sub(atomic<_ITp*>* __a, ptrdiff_t __d) noexcept
+                                                         ^
+2
+2 running 0
+2 running 1
+2 running 2
+2 running 3
+2 running 4
+2 running 5
+2 running 6
+2 running 7
+2 running 8
+2 running 9
+2 running 10
+2 running 11
+2 running 12
+2 running 13
+2 running 14
+2 running 15
+2 running 16
+2 running 17
+2 running 18
+2 running 19
+2 running 20
+2 running 21
+2 running 22
+2 running 23
+2 running 24
+2 running 25
+2 running 26
+2 running 27
+2 running 28
+2 running 29
+2 running 30
+2 running 31
+2 running 32
+2 running 33
+2 running 34
+2 running 35
+2 running 36
+2 running 37
+2 running 38
+2 running 39
+2 running 40
+2 running 41
+2 running 42
+2 running 43
+2 running 44
+2 running 45
+2 running 46
+2 running 47
+2 running 48
+2 running 49
+2 running 50
+2 running 51
+2 running 52
+2 running 53
+2 running 54
+2 running 55
+2 running 56
+2 running 57
+2 running 58
+2 running 59
+2 running 60
+2 running 61
+2 running 62
+2 running 63
+2 running 64
+2 running 65
+2 running 66
+2 running 67
+2 running 68
+2 running 69
+2 running 70
+2 running 71
+2 running 72
+2 running 73
+2 running 74
+2 running 75
+2 running 76
+2 running 77
+2 running 78
+2 running 79
+2 running 80
+2 running 81
+2 running 82
+2 running 83
+2 running 84
+2 running 85
+2 running 86
+2 running 87
+2 running 88
+2 running 89
+2 running 90
+2 running 91
+2 running 92
+2 running 93
+2 running 94
+2 running 95
+2 running 96
+2 running 97
+2 running 98
+2 running 99
