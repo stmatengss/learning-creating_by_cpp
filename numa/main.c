@@ -33,7 +33,7 @@ void run_full() {
 
 void test() {
 		printf("Max NUMA memory size is %ld\n", numa_node_size(1, NULL));
-		mem = numa_alloc_onnode(MB + 4, 1);
+		mem = numa_alloc_onnode(MB + 4, 0);
 		if (mem == NULL) {
 				perror("NUMA alloc error\n");
 				exit(1);
@@ -57,7 +57,11 @@ int main() {
 		if (nodemask_isset(&mask, 1)) {
 				printf("Set process to node 1 successful.\n");
 		}
-		numa_bind(&mask);
+		/* The first method to bind thread to node */
+//		numa_bind(&mask);
+		/* The second method to bind thread to node */
+		numa_run_on_node(1);
+		numa_set_preferred(1);
 //		nodemask_clr(&mask, 1);
 		test();
 		return 0;
