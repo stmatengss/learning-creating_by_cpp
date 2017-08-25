@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/mateng/learning-creating_by_cpp/GTEST/add.cpp
+
+/home/mateng/learning-creating_by_cpp/GTEST/tests.cpp
+gtest/gtest.h
+-
+add.cpp
+/home/mateng/learning-creating_by_cpp/GTEST/add.cpp
+
