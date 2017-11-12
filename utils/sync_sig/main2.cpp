@@ -1,7 +1,10 @@
+#include <sys/mman.h>
 #include <sys/types.h>
 #include <sys/ipc.h>
 #include <sys/shm.h>
 #include <cstdio>
+#include <fcntl.h>
+#include <unistd.h>
 #include <iostream>
 
 using namespace std;
@@ -13,14 +16,12 @@ const static char* f = "./key";
 class IPCLock {
 public:
 	int shmid;
-	int key;
+	int fd;
 	char *counter;
 	IPCLock() {
-		key = ftok(f, 0);
-		if ((shmid = shmget(key, 1, IPC_CREAT | 0666)) < 0 ) {
-			perror("shmget error");
-		}	
-		counter = (char *)shmat(shmid, NULL, 0);
+		fd = open(f, O_CREAT | O_RDWR | O_TRUNC, 00777);
+		write(fd, "", 1);
+		counter = (char *)mmap(NULL, 1, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
 	}
 	~IPCLock() {
 		
@@ -32,6 +33,7 @@ public:
 		}
 		printf("[A]%d\n", int(*counter));
 		*counter = *counter + 1;
+		msync(counter, 1, MS_SYNC);
 		printf("[B]%d\n", int(*counter));
 		wait();
 	}
