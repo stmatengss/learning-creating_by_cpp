@@ -11,7 +11,7 @@ main(void)
 		int i;
 		char c;
 		double d;
-		char a[];
+		char a[4];
 	};
 
 	/* Output is compiler dependent */
@@ -20,7 +20,7 @@ main(void)
 			(long) offsetof(s, i),
 			(long) offsetof(struct s, c),
 			(long) offsetof(struct s, d),
-			(long) offsetof(struct s, a));
+			(long) offsetof(struct s, a[2]));
 	printf("sizeof(struct s)=%ld\n", (long) sizeof(struct s));
 
 	exit(EXIT_SUCCESS);
