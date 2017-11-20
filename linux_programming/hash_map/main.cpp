@@ -2,10 +2,10 @@
 #include <stdlib.h>
 #include <stdint.h>
 #include <unordered_map>
-//#include <ext/hash_map>
+#include <ext/hash_map>
 
 using namespace std;
-//using namespace __gnu_cxx;
+using namespace __gnu_cxx;
 
 const static int iter_num = 1 << 26;
 
@@ -19,6 +19,7 @@ void test_hash_map {
 }
 */
 typedef unordered_map<uint64_t, int> u_map;
+//typedef hash_map<uint64_t, int> u_map;
 
 void test_unorder_map() {
 	u_map test;
