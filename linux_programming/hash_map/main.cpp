@@ -36,6 +36,8 @@ void test_unorder_map() {
 	if (it == test.end()) {
 		printf("Can not find key\n");
 	}
+	it = test.find(1ULL);
+	cout << it->first << " " << it->second << endl;
 }
 
 int main(int argc, char **argv) {
