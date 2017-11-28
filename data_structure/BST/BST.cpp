@@ -3,6 +3,8 @@
 #include <stdio.h>
 #include <queue>
 #include <random>
+#include <numeric>
+#include <chrono>
 
 const static int ValueLen = 8;
 const static int IterNum = 200;
@@ -16,6 +18,8 @@ struct Node {
 	Node *left;
 	Node *right;
 };
+
+int num;
 
 class BST
 {
@@ -77,7 +81,7 @@ public:
 			q.pop();
 			if (level != t.second) {
 				level = t.second;
-				printf("%d\n", counter);
+				printf("%d\t%.2lf\n", counter, static_cast<double>(counter) * 100 / num);
 				counter = 0;
 			}
 			// printf("%lld ", (long long)t.first->key);
@@ -88,17 +92,20 @@ public:
 		printf("[LEVEL]%d\n", level);
 	}
 };
-
 int main(int argc, char const *argv[])
 {
 	BST *bst = new BST();
 	random_device rd;
-	int num = atoi(argv[1]);
+	num = atoi(argv[1]);
+	auto start = std::chrono::system_clock::now();
 	for (int i = 1; i < num; i ++ ) {
 		// printf("[ITER]%d\n", i);
-		bst->insert(i * rd() * 101 % (2 * num), nullptr);
+		bst->insert(i * rd() * 101 % (1 * num), nullptr);
 	}
+	auto end = std::chrono::system_clock::now();
+	std::chrono::duration<double> diff = end-start;
 	printf("[TEST]\n");
 	bst->test();
+	printf("[TIME]%lf\n", diff.count());
 	return 0;
 }
