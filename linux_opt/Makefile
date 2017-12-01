@@ -1,0 +1,2 @@
+CFALGS:=-O3
+LDLIBS:=-lrt
