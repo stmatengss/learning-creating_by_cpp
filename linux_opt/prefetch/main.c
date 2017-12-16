@@ -4,16 +4,16 @@
 #include<time.h>
 
 #define CAP (128 * 1024 * 1024)
-#define N (1024 * 1024)
+#define N (32 * 1024 * 1024)
 
-int do_work(int a)
+__attribute__((always_inline)) int do_work(int a) 
 {
 	int i = 0;
-	for(i = 0; i < 110; i++) {
+	for(i = 0; i < 1; i++) {
 		a = a ^ i;
 	}
 	return a;
-}
+} 
 
 /*
  * __builtin_prefetch
