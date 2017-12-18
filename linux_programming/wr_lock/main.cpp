@@ -7,27 +7,31 @@ using namespace std;
 
 atomic_flag locked_g = ATOMIC_FLAG_INIT;
 atomic_flag locked_r = ATOMIC_FLAG_INIT;
-int counter = 0;
+volatile int counter = 0;
 
 int num;
 
 const static int iter_num = 100;
-const static int reader_num = 10;
+const static int reader_num = 4;
 
 void lock_g() {
-	while(locked_g.test_and_set(memory_order_acquire));
+//	while(locked_g.test_and_set(memory_order_acquire));
+	while(locked_g.test_and_set());
 }
 
 void unlock_g() {
-	locked_g.clear(memory_order_release);
+//	locked_g.clear(memory_order_release);
+	locked_g.clear();
 }
 
 void lock_r() {
-	while(locked_r.test_and_set(memory_order_acquire));
+//	while(locked_r.test_and_set(memory_order_acquire));
+	while(locked_r.test_and_set());
 }
 
 void unlock_r() {
-	locked_r.clear(memory_order_release);
+//	locked_r.clear(memory_order_release);
+	locked_r.clear();
 }
 
 void begin_read() {
@@ -39,7 +43,7 @@ void begin_read() {
 
 void end_read() {
 	lock_r();
-	counter ++;
+	counter --;
 	if (counter == 0) unlock_g();
 	unlock_r();
 }
@@ -62,14 +66,14 @@ void reader() {
 
 void writer() {
 	for (int i = 0; i < iter_num; i ++ ) {
-		begin_read();
+		begin_write();
 		num ++;
 		printf("[W]%d\n", num);
-		end_read();
+		end_write();
 	}
 }
 int main() {
-	thread write(reader);
+	thread write(writer);
 	thread read[reader_num];
 
 	for (int i = 0; i < reader_num; i ++ ) {
