@@ -8,6 +8,7 @@
 #include <vector>
 #include <cassert>
 #include <algorithm>
+#include <random>
 
 int MAXKEYS = 5; // we split at max keys. 
 struct Node : std::enable_shared_from_this<Node>
@@ -80,7 +81,7 @@ struct Node : std::enable_shared_from_this<Node>
         _keys.insert(iter, median);
         
         _children.insert(_children.begin() + position + 1, rightSiblingOfChildAfterSplit);
-        assert(_children[position].get() == oldChild);  
+        //assert(_children[position].get() == oldChild);  
         // the +1 is important because the original child node is already present, and the new child will come after the existing child.     
         
         // Now check if the node size was max, then split, and insert recursively.
@@ -173,7 +174,7 @@ struct Node : std::enable_shared_from_this<Node>
             }
         }
     }    
-
+	
     bool _isLeaf;
     Node* _parent;
     std::vector<int> _keys;
@@ -186,6 +187,8 @@ struct Tree
     {
         _root.reset(new Node(true));
     }
+
+	int sum_node;
     
     void print()
     {
@@ -193,6 +196,7 @@ struct Tree
         // print in depth first order
         for(const auto& child : _root->_children)
         {
+			sum_node ++;
             child->printNode(true /*printRecursive*/);
         }
     }
@@ -207,39 +211,31 @@ struct Tree
         {
             _root.reset(insertNode);
         }
-                
+/*                
         std::cout << std::endl;
         std::cout << "--------------printing tree--------------" << std::endl;
         print();
         std::cout << "---------------end print tree-----------" << std::endl;
-        std::cout << std::endl;
-    }
+  		std::cout << std::endl;
+*/  
+	}
     
     std::shared_ptr<Node> _root;
 };
 
+const int iter_num = 100;
+
 int main()
 {
-
+	std::random_device rd;
     std::shared_ptr<Tree> tree(new Tree());
-    tree->insert(20);
-    tree->insert(30);
-    tree->insert(40);
-    tree->insert(50);
-    tree->insert(60);
-    
-    tree->insert(10);
-    tree->insert(12);
-    tree->insert(14);
-    tree->insert(16);
-    
-    tree->insert(22);
-    tree->insert(24);
-    tree->insert(26);
-    tree->insert(28);
-    tree->insert(29);
-    tree->insert(4);
-    tree->insert(6);
-    tree->insert(8);
-    std::cout << "Hello, world!\n";
+	for (int i = 0; i < iter_num; i ++ ) {
+		tree->insert(rd() % 100);
+	}
+	std::cout << std::endl;
+	std::cout << "--------------printing tree--------------" << std::endl;
+	tree->print();
+	std::cout << "---------------end print tree-----------" << std::endl;
+	std::cout << std::endl;
+    std::cout << tree->sum_node << "\n";
 }

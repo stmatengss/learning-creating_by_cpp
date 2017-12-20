@@ -78,15 +78,33 @@ void test_unorder_map() {
 	cout << it->first << " " << it->second << endl;
 }
 
+const static int del_iter = 1000000;
+const static int push_number = 100;
+
+void test_clear() {
+	h_map test[del_iter];
+	for (int i = 0; i < del_iter; i ++ ) {
+		for (int j = 0; j < push_number; j ++ ) {
+			test[i][push_number] = j;
+		}
+	}
+	auto start = std::chrono::system_clock::now();
+	for (int i = 0; i < del_iter; i ++ ) {
+		test[i].clear();
+	}
+	auto end = std::chrono::system_clock::now();
+	auto diff = end-start;
+	printf("[TIME]%lf [Tput]%lf\n", diff.count(), (double)del_iter / 1000000 / diff.count());
+}
+
 int main(int argc, char **argv) {
 	if (argv[1][0] == '1') {
 		test_unorder_map();
 	} else if (argv[1][0] == '2') {
 		test_hash_map();
 	} else if (argv[1][0] == '3') {
-
+		test_clear();
 	} else {
-
 	}
 	return 0;
 }
