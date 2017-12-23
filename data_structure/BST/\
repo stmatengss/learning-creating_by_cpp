@@ -11,6 +11,7 @@ const static int IterNum = 100000000;
 
 using namespace std;
 
+typedef hash_map<uint64_t, bool> h_map;
 
 struct Node {
 	uint64_t key;
@@ -20,13 +21,18 @@ struct Node {
 };
 
 int num;
+int batch_size;
 
 class BST
 {
 public:
 	Node *roots[IterNum];
 	Node *root;
+	h_map is_new;
+
 	int root_counter;
+	int root_counter_batch;
+
 	BST() {
 		root = new Node();
 		root->key = 0;
@@ -73,6 +79,45 @@ public:
 			new_now->right = new_next;
 		}
 		
+		root_counter ++;
+	}
+
+	void vector_insert(uint64_t *key, int length) {
+		insert(key[0], nullptr);
+		Node *new_root = new Node();
+		is_new.clear();
+	   	roots[root_counter + 1] = new_root;	
+	
+		Node *next = roots[root_counter];
+		Node *now;
+		Node *new_next = new_root;
+		Node *new_now;
+		new_next->key = 0;
+
+		while (next) {
+			now = next;
+			new_now = new_next;
+			if(key < now->key) {	
+				new_next = new Node();
+				new_now->key = next->key;
+				new_now->left = new_next;
+				new_now->right = now->right;
+				next = now->left;
+
+			} else if (key > now->key) {
+				new_next = new Node();
+				new_now->key = now->key;
+				new_now->left = now->left;
+				new_now->right = new_next;
+				next = now->right;
+
+			} else {
+
+			}
+		}
+		for (int i = 1; i < length; i ++ ) {
+			
+		}
 		root_counter ++;
 	}
 
@@ -202,24 +247,28 @@ int main(int argc, char const *argv[])
 {
 	random_device rd;
 	num = atoi(argv[1]);
+	batch_size = atoi(argv[2]);
+	uint64_t *vectors = new uint64_t[batch_size];
 	BST *bst = new BST();
+	int insert_counter = 0;
 	auto start = std::chrono::system_clock::now();
-	int counter = 0;
-	for (int i = 1; i < num; i ++ ) {
-		// printf("[ITER]%d\n", i);
-		uint64_t x = static_cast<uint64_t>(i) * rd() % 1000000 + 1;
-		//uint64_t x = static_cast<uint64_t>(i);
-//		printf("%d\n", x);
-		auto res = bst->search(x);
-		if (res == nullptr) {
-			counter ++;
-			bst->insert(x, nullptr);
+	for (int i = 0; i < num / batch_size; i ++ ) {
+		for(int j = 0; j < batch_size; j ++ ) {
+
+			uint64_t x = static_cast<uint64_t>(i) * rd() % 10000000 + 1;
+			//		printf("%d\n", x);
+			auto res = bst->search(x);
+			if (res == nullptr) {
+				vectors[j] = x;
+				insert_counter ++;
+			}
 		}
+		bst->vector_insert(vectors, batch_size);
 	}
 	// bst->drop(9ULL);
 	auto end = std::chrono::system_clock::now();
 	std::chrono::duration<double> diff = end-start;
-	printf("[TEST]%d\n", counter);
+	printf("[TEST]%d\n", insert_counter);
 	bst->test();
 	printf("[TIME]%lf\n", diff.count());
 	return 0;

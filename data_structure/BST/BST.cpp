@@ -163,11 +163,11 @@ public:
 			if (level != t.second) {
 				level = t.second;
 				sum += counter;
-				printf("[L]%d\n", counter);
+//				printf("[L]%d\n", counter);
 				counter = 0;
 			}
 			counter ++;
-			printf("%lld ", (long long)t.first->key);
+//			printf("%lld ", (long long)t.first->key);
 			if (t.first->left != nullptr) q.push(make_pair(t.first->left , t.second + 1));
 			if (t.first->right!= nullptr) q.push(make_pair(t.first->right, t.second + 1));
 		}
@@ -200,7 +200,6 @@ int main(int argc, char const *argv[])
 	auto end = std::chrono::system_clock::now();
 	std::chrono::duration<double> diff = end-start;
 	printf("[TEST]\n");
-	bst->test();
 	printf("[TIME]%lf\n", diff.count());
 	return 0;
 }

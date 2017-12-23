@@ -105,6 +105,10 @@ int main(int argc, char **argv) {
 	} else if (argv[1][0] == '3') {
 		test_clear();
 	} else {
+		h_map test;
+		test[100ULL] = 100;
+		printf("%d\n", test[0ULL]);
+		printf("%d\n", test[100ULL]);
 	}
 	return 0;
 }
