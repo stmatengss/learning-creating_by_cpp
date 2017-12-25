@@ -1,0 +1,3 @@
+EXE:=main
+
+all: $(EXE)

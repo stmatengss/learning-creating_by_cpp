@@ -1,6 +1,7 @@
 #include <algorithm>
 #include <iostream>
 #include <stdio.h>
+#include <tuple>
 #include <queue>
 #include <random>
 #include <numeric>
@@ -53,6 +54,50 @@ public:
 			now->left = next;
 		} else {
 			now->right = next;
+		}
+	}
+		
+	inline int binary_search(uint64_t *keys, int len) {
+	 		
+		return 0;
+	}
+
+	inline int binary_search(uint64_t *keys, int begin, int end) {
+		return 0;
+	}
+
+	void vector_insert(uint64_t *keys, int len) {
+		typedef tuple<int, int, Node *> Item;
+		vector<Item> items[2];
+		int round_iter = 0;
+		Node *next;
+//		int item_len_pre = 1;
+//		int item_len_next = 0;
+		int item_counter = 0;
+		items[item_counter].push_back(make_tuple(0, len, root));
+		while (true) {
+			for (int i = 0; i < items[item_counter % 2].size(); i ++ ) {
+				int begin = get<0>(items[item_counter % 2][i]);
+				int end = get<1>(items[item_counter % 2][i]);
+				Node *node = get<2>(items[item_counter % 2][i]);
+				int mid = binary_search(keys, begin, end);
+				if (node->left != nullptr) {
+
+					items[(item_counter + 1) % 2].push_back(make_tuple(begin, mid, node->left));
+				} else {
+					// TODO
+					// do new and insert direactly
+				}
+				if (node->right != nullptr) {
+
+					items[(item_counter + 1) % 2].push_back(make_tuple(mid, end, node->right));
+				} else {
+					// TODO
+					// do new and insert direactly
+				}
+			}
+			items[item_counter % 2].clear();
+			item_counter ++;
 		}
 	}
 
@@ -181,25 +226,30 @@ int main(int argc, char const *argv[])
 {
 	random_device rd;
 	num = atoi(argv[1]);
+	batch_size = atoi(argv[2]);
+	uint64_t *vectors = new uint64_t[batch_size];
 	BST *bst = new BST();
+	int insert_counter = 0;
 	auto start = std::chrono::system_clock::now();
-	vector<uint64_t>store;
 	for (int i = 1; i < num; i ++ ) {
 		// printf("[ITER]%d\n", i);
-		uint64_t x = static_cast<uint64_t>(i) * rd() * 101 % (1 * num) + 1;
-		//uint64_t x = static_cast<uint64_t>(i);
-		store.push_back(x);
-		bst->insert(x, nullptr);
-		// bst->drop(x);
-		if (i % 2 == 0) {
-			//printf("%d\n", store[i / 2]);
-			bst->drop(store[i / 2]);
+		for (int j = 0; j < batch_size; j ++ ) {
+
+			uint64_t x = static_cast<uint64_t>(i + 1) * rd() % 10000000 + 1;
+			//		printf("%d\n", x);
+			auto res = bst->search(x);
+			if (res == nullptr) {
+				vectors[j] = x;
+				insert_counter ++;
+			}
 		}
+		bst->vector_insert(vectors, batch_size);
 	}
 	// bst->drop(9ULL);
 	auto end = std::chrono::system_clock::now();
 	std::chrono::duration<double> diff = end-start;
 	printf("[TEST]\n");
+	bst->test();
 	printf("[TIME]%lf\n", diff.count());
 	return 0;
 }

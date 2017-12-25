@@ -84,6 +84,7 @@ public:
 		root_counter ++;
 	}
 
+#if 0
 	void vector_insert(uint64_t *keys, int length) {
 		printf("[Insert]\n");
 		Node *new_root = new Node();
@@ -210,6 +211,12 @@ public:
 		}
 		root_counter ++;
 	}
+
+#else
+	void vector_insert(uint64_t *key, int len) {
+		
+	}	
+#endif
 
 	char *search(uint64_t key) {
 		Node *now = roots[root_counter];
