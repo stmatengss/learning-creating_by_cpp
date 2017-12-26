@@ -23,24 +23,10 @@ struct Node {
 int num;
 int batch_size;
 
-struct Item{
-	int begin;
-	int end;
-	Node *father;
-	void fill(int begin_, int end_, Node *father_) {
-		begin = begin_;
-		end = end_;
-		father = father_;
-	}
-};
-
-const static int batch_max = 100000;
-
 class BST
 {
 public:
 	Node *root;
-	Item items[2][batch_max];
 	BST() {
 		root = new Node();
 		root->key = 1000;
@@ -84,6 +70,14 @@ public:
 			}
 		}
 		return high;
+/*
+		if (high >= end|| keys[high] != target) {
+			return -high - 1;
+		} else {
+			return high;
+		}		
+		return 0;
+*/
 	}
 
 	inline int binary_search(uint64_t *keys, int begin, int end) {
@@ -91,45 +85,41 @@ public:
 	}
 
 	void vector_insert(uint64_t *keys, int len) {
-//		typedef tuple<int, int, Node *> Item;
-//		vector<Item> items[2];
-//
+		typedef tuple<int, int, Node *> Item;
+		vector<Item> items[2];
 		int round_iter = 0;
 		Node *next;
-		int item_len_pre = 1;
-		int item_len_next = 0;
+//		int item_len_pre = 1;
+//		int item_len_next = 0;
 		int item_counter = 0;
-//		items[item_counter].push_back(make_tuple(0, len, root));
-		items[item_counter][0].fill(0, len, root);
-		while (item_len_pre > 0) {
+		items[item_counter].push_back(make_tuple(0, len, root));
+		while (items[item_counter % 2].size() > 0) {
 //	printf("[%d]\n", item_counter);
-			for (int i = 0; i < item_len_pre; i ++ ) {
-				int begin = items[item_counter % 2][i].begin;
-				int end = items[item_counter % 2][i].end;
+			for (int i = 0; i < items[item_counter % 2].size(); i ++ ) {
+				int begin = get<0>(items[item_counter % 2][i]);
+				int end = get<1>(items[item_counter % 2][i]);
 				if (begin == end) {
 					continue;
 				}
-				Node *node = items[item_counter % 2][i].father;
+				Node *node = get<2>(items[item_counter % 2][i]);
 				int mid = binary_search(keys, begin, end, node->key);
 //				printf("%d %d %d %p\n", begin, end, mid, node);
 				if (node->left != nullptr) {
 					
-					items[(item_counter + 1) % 2][item_len_next ++].fill(begin, mid, node->left);
+					items[(item_counter + 1) % 2].push_back(make_tuple(begin, mid, node->left));
 				} else {
 					// do new and insert direactly
 					single_insert(node, keys + begin, mid - begin);
 				}
 				if (node->right != nullptr) {
 
-					items[(item_counter + 1) % 2][item_len_next ++].fill(mid, end - mid, node->right);
+					items[(item_counter + 1) % 2].push_back(make_tuple(mid, end, node->right));
 				} else {
 					// do new and insert direactly
 					single_insert(node, keys + mid, end - mid);
 				}
 			}
-			item_len_pre = item_len_next;
-			item_len_next = 0;
-			
+			items[item_counter % 2].resize(0);
 			item_counter ++;
 		}
 	}
@@ -147,7 +137,6 @@ public:
 			node->right = now;
 		}
 		new_root = now;
-		int begin = 0, end = len - 1;
 		for (int i = 1; i < len; i ++ ) {
 			key = candidates[i];
 			Node *next = new_root;
@@ -170,50 +159,7 @@ public:
 			}
 		}
 	}
-	/*
-	void single_insert(Node *node, uint64_t *candidates, int len) {
-		if (len == 0)
-			return;
-		uint64_t key = candidates[len / 2];
-		Node *now = new Node();
-		now->key = key;
-		Node *new_root;
-		if (key < node->key) {
-			node->left = now;
-		} else {
-			node->right = now;
-		}
-		new_root = now;
-		int begin = 0, end = len - 1;
-		for (int i = 0; i < len; i ++ ) {
-			if (i % 2 == 0) {
 
-				key = candidates[begin ++];
-			} else {
-
-				key = candidates[end --];
-			}
-			Node *next = new_root;
-			while(next != nullptr) {
-				now = next;
-				if (key < now->key) {
-					next = now->left;	
-				} else if (key > now->key) {
-					next = now->right;
-				} else {
-					return;
-				}
-			}
-			next = new Node();
-			next->key = key;
-			if (key < now->key) {
-				now->left = next;
-			} else {
-				now->right = next;
-			}
-		}
-	}
-	*/
 	char *search(uint64_t key) {
 		Node *now;
 		while (now != nullptr) {
@@ -337,7 +283,6 @@ public:
 };
 
 #define BATCH
-const static int pre_insert = 1000000;
 
 int main(int argc, char const *argv[])
 {
@@ -348,16 +293,12 @@ int main(int argc, char const *argv[])
 	BST *bst = new BST();
 	int insert_counter = 0;
 	auto start = std::chrono::system_clock::now();
-	for (int i = 0; i < pre_insert; i ++ ) {
-		uint64_t x = static_cast<uint64_t>(i + 1) * rd() % 100000000 + 1;
-		bst->insert(x, nullptr);
-	}
 #ifdef BATCH
 	for (int i = 0; i < num; i ++ ) {
 //		printf("[ITER]%d\n", i);
 		for (int j = 0; j < batch_size; j ++ ) {
 
-			uint64_t x = static_cast<uint64_t>(i + 1) * rd() % 100000000 + 1;
+			uint64_t x = static_cast<uint64_t>(i + 1) * rd() % 100000 + 1;
 //			printf("%d\n", x);
 //			auto res = bst->search(x);
 //			if (res == nullptr) {
@@ -374,7 +315,7 @@ int main(int argc, char const *argv[])
 #else
 	for (int i = 0; i < num * batch_size; i ++ ) {
 
-		uint64_t x = static_cast<uint64_t>(i + 1) * rd() % 100000000 + 1;
+		uint64_t x = static_cast<uint64_t>(i + 1) * rd() % 100000 + 1;
 		bst->insert(x, nullptr);
 	}
 #endif

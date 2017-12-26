@@ -1,1 +1,2 @@
-CXXFLAGS:=-std=c++11 -O0 -g
+CXX=g++-5
+CXXFLAGS:=-std=c++17 -O0 -g

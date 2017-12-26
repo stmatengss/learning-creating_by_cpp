@@ -7,11 +7,12 @@
 #include <numeric>
 #include <chrono>
 
-const static int ValueLen = 8;
-const static int IterNum = 200;
 
 using namespace std;
 
+const static int batch_max = 100000;
+const static int ValueLen = 8;
+const static int IterNum = 100000;
 
 struct Node {
 	uint64_t key;
@@ -27,23 +28,26 @@ struct Item{
 	int begin;
 	int end;
 	Node *father;
-	void fill(int begin_, int end_, Node *father_) {
+	Node *rep_father;
+	void fill(int begin_, int end_, Node *father_, Node *rep_father_) {
 		begin = begin_;
 		end = end_;
 		father = father_;
+		rep_father = rep_father_;
 	}
 };
-
-const static int batch_max = 100000;
 
 class BST
 {
 public:
+	Node *roots[IterNum];
 	Node *root;
+	int root_counter;
 	Item items[2][batch_max];
 	BST() {
 		root = new Node();
 		root->key = 1000;
+		roots[0] = root;
 	}
 	~BST() {
 
@@ -91,53 +95,64 @@ public:
 	}
 
 	void vector_insert(uint64_t *keys, int len) {
-//		typedef tuple<int, int, Node *> Item;
-//		vector<Item> items[2];
-//
 		int round_iter = 0;
-		Node *next;
+		roots[root_counter + 1] = new Node();
+		roots[root_counter + 1]->key = roots[root_counter]->key;
+		Node *rep_node;
+		Node *new_node;
 		int item_len_pre = 1;
 		int item_len_next = 0;
 		int item_counter = 0;
-//		items[item_counter].push_back(make_tuple(0, len, root));
-		items[item_counter][0].fill(0, len, root);
+		items[item_counter][0].fill(0, len, roots[root_counter], roots[root_counter + 1]);
 		while (item_len_pre > 0) {
 //	printf("[%d]\n", item_counter);
+//			printf("[R]%d\n", item_counter);
 			for (int i = 0; i < item_len_pre; i ++ ) {
 				int begin = items[item_counter % 2][i].begin;
 				int end = items[item_counter % 2][i].end;
-				if (begin == end) {
-					continue;
-				}
 				Node *node = items[item_counter % 2][i].father;
+				Node *rep_node = items[item_counter % 2][i].rep_father;
 				int mid = binary_search(keys, begin, end, node->key);
-//				printf("%d %d %d %p\n", begin, end, mid, node);
-				if (node->left != nullptr) {
-					
-					items[(item_counter + 1) % 2][item_len_next ++].fill(begin, mid, node->left);
+//				printf("[P]%d %d %d\n", begin, end, mid);
+			    if (begin == mid) {
+					rep_node->left = node->left;
+					// XXX
 				} else {
-					// do new and insert direactly
-					single_insert(node, keys + begin, mid - begin);
+					if (node->left != nullptr) {
+						new_node = new Node();	
+						new_node->key = node->left->key; 
+						rep_node->left = new_node;
+						items[(item_counter + 1) % 2][item_len_next ++].fill(begin, mid, node->left, new_node);
+					} else {
+						single_insert(rep_node, keys + begin, mid - begin);
+					}
 				}
-				if (node->right != nullptr) {
-
-					items[(item_counter + 1) % 2][item_len_next ++].fill(mid, end - mid, node->right);
+				if (mid == end) {
+					rep_node->right = node->right;
+					//XXX
 				} else {
-					// do new and insert direactly
-					single_insert(node, keys + mid, end - mid);
+					if (node->right != nullptr) {
+						new_node = new Node();
+						new_node->key = node->right->key;
+						rep_node->right = new_node;
+						items[(item_counter + 1) % 2][item_len_next ++].fill(mid, end, node->right, new_node);
+					} else {
+						single_insert(rep_node, keys + mid, end - mid);
+					}
 				}
-			}
+			} // end for
 			item_len_pre = item_len_next;
 			item_len_next = 0;
 			
 			item_counter ++;
 		}
+		root_counter ++;
 	}
 
 	void single_insert(Node *node, uint64_t *candidates, int len) {
 		if (len == 0)
 			return;
-		uint64_t key = candidates[0];
+		uint64_t key = candidates[len / 2];
 		Node *now = new Node();
 		now->key = key;
 		Node *new_root;
@@ -149,7 +164,11 @@ public:
 		new_root = now;
 		int begin = 0, end = len - 1;
 		for (int i = 1; i < len; i ++ ) {
-			key = candidates[i];
+			if (i % 2 == 0) {
+				key = candidates[begin ++];
+			} else {
+				key = candidates[end ++];
+			}
 			Node *next = new_root;
 			while(next != nullptr) {
 				now = next;
@@ -314,7 +333,8 @@ public:
 		int counter = 0;
 		int sum = 0;
 		std::queue<pair<Node *, int> >q;
-		q.push(make_pair(root, 0));
+//		q.push(make_pair(root, 0));
+		q.push(make_pair(roots[root_counter], 0));
 		while (!q.empty()) {
 			auto t = q.front();
 			q.pop();
@@ -325,7 +345,7 @@ public:
 				counter = 0;
 			}
 			counter ++;
-			printf("%lld ", (long long)t.first->key);
+//			printf("%lld ", (long long)t.first->key);
 			if (t.first->left != nullptr) q.push(make_pair(t.first->left , t.second + 1));
 			if (t.first->right!= nullptr) q.push(make_pair(t.first->right, t.second + 1));
 		}
@@ -347,11 +367,13 @@ int main(int argc, char const *argv[])
 	uint64_t *vectors = new uint64_t[batch_size];
 	BST *bst = new BST();
 	int insert_counter = 0;
-	auto start = std::chrono::system_clock::now();
+	/*
 	for (int i = 0; i < pre_insert; i ++ ) {
 		uint64_t x = static_cast<uint64_t>(i + 1) * rd() % 100000000 + 1;
 		bst->insert(x, nullptr);
 	}
+	*/
+	auto start = std::chrono::system_clock::now();
 #ifdef BATCH
 	for (int i = 0; i < num; i ++ ) {
 //		printf("[ITER]%d\n", i);
@@ -366,6 +388,9 @@ int main(int argc, char const *argv[])
 //			}
 		}
 		sort(vectors, vectors + batch_size);
+//		for (int j = 0; j < batch_size; j ++ ) {
+//			printf("%lld\n", vectors[j]);
+//		}
 		bst->vector_insert(vectors, batch_size);
 //		printf("\n");
 //		bst->test();
@@ -382,7 +407,7 @@ int main(int argc, char const *argv[])
 	auto end = std::chrono::system_clock::now();
 	std::chrono::duration<double> diff = end-start;
 	printf("[TEST]\n");
-//	bst->test();
+	bst->test();
 	printf("[TIME]%lf\n", diff.count());
 	return 0;
 }

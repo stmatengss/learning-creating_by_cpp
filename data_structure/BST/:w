@@ -147,7 +147,6 @@ public:
 			node->right = now;
 		}
 		new_root = now;
-		int begin = 0, end = len - 1;
 		for (int i = 1; i < len; i ++ ) {
 			key = candidates[i];
 			Node *next = new_root;
@@ -170,50 +169,7 @@ public:
 			}
 		}
 	}
-	/*
-	void single_insert(Node *node, uint64_t *candidates, int len) {
-		if (len == 0)
-			return;
-		uint64_t key = candidates[len / 2];
-		Node *now = new Node();
-		now->key = key;
-		Node *new_root;
-		if (key < node->key) {
-			node->left = now;
-		} else {
-			node->right = now;
-		}
-		new_root = now;
-		int begin = 0, end = len - 1;
-		for (int i = 0; i < len; i ++ ) {
-			if (i % 2 == 0) {
 
-				key = candidates[begin ++];
-			} else {
-
-				key = candidates[end --];
-			}
-			Node *next = new_root;
-			while(next != nullptr) {
-				now = next;
-				if (key < now->key) {
-					next = now->left;	
-				} else if (key > now->key) {
-					next = now->right;
-				} else {
-					return;
-				}
-			}
-			next = new Node();
-			next->key = key;
-			if (key < now->key) {
-				now->left = next;
-			} else {
-				now->right = next;
-			}
-		}
-	}
-	*/
 	char *search(uint64_t key) {
 		Node *now;
 		while (now != nullptr) {
@@ -337,7 +293,6 @@ public:
 };
 
 #define BATCH
-const static int pre_insert = 1000000;
 
 int main(int argc, char const *argv[])
 {
@@ -348,10 +303,7 @@ int main(int argc, char const *argv[])
 	BST *bst = new BST();
 	int insert_counter = 0;
 	auto start = std::chrono::system_clock::now();
-	for (int i = 0; i < pre_insert; i ++ ) {
-		uint64_t x = static_cast<uint64_t>(i + 1) * rd() % 100000000 + 1;
-		bst->insert(x, nullptr);
-	}
+	for (int i)
 #ifdef BATCH
 	for (int i = 0; i < num; i ++ ) {
 //		printf("[ITER]%d\n", i);
