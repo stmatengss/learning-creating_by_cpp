@@ -124,7 +124,8 @@ public:
 						rep_node->left = new_node;
 						items[(item_counter + 1) % 2][item_len_next ++].fill(begin, mid, node->left, new_node);
 					} else {
-						single_insert(rep_node, keys + begin, mid - begin);
+//						single_insert(rep_node, keys + begin, mid - begin);
+						rep_node->left = dfs_single_insert(keys + begin, 0, mid - begin);						
 					}
 				}
 				if (mid == end) {
@@ -137,7 +138,8 @@ public:
 						rep_node->right = new_node;
 						items[(item_counter + 1) % 2][item_len_next ++].fill(mid, end, node->right, new_node);
 					} else {
-						single_insert(rep_node, keys + mid, end - mid);
+//						single_insert(rep_node, keys + mid, end - mid);
+						rep_node->right = dfs_single_insert(keys + mid, 0, end - mid);
 					}
 				}
 			} // end for
@@ -148,7 +150,29 @@ public:
 		}
 		root_counter ++;
 	}
-
+#if 1 
+/*
+	void single_insert(Node *node, uint64_t *candidates, int len) {
+		if (len == 0)
+			return;
+		if (key < node->key) {
+			node->left = dfs_single_insert(candidates, 0, len);
+		} else {
+			node->right = dfs_single_insert(candidates, 0, len);
+		}
+	}
+*/
+	Node *dfs_single_insert(uint64_t *num, int low, int high) {
+		if (low >= high) return nullptr;
+		
+		int mid = low + (high - low) / 2;
+		Node *new_node = new Node();
+		new_node->key = num[mid];
+		new_node->left = dfs_single_insert(num, low, mid);
+		new_node->right = dfs_single_insert(num, mid + 1, high);
+		return new_node;
+	}
+#else
 	void single_insert(Node *node, uint64_t *candidates, int len) {
 		if (len == 0)
 			return;
@@ -163,7 +187,7 @@ public:
 		}
 		new_root = now;
 		int begin = 0, end = len - 1;
-		for (int i = 1; i < len; i ++ ) {
+		for (int i = 0; i < len - 1; i ++ ) {
 			if (i % 2 == 0) {
 				key = candidates[begin ++];
 			} else {
@@ -189,7 +213,7 @@ public:
 			}
 		}
 	}
-	/*
+
 	void single_insert(Node *node, uint64_t *candidates, int len) {
 		if (len == 0)
 			return;
@@ -232,7 +256,7 @@ public:
 			}
 		}
 	}
-	*/
+#endif
 	char *search(uint64_t key) {
 		Node *now;
 		while (now != nullptr) {
