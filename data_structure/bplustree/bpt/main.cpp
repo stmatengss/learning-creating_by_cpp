@@ -541,7 +541,7 @@ int main() {
 		bplus_tree_put(tree, d, d);
 	}
 
-	bplus_tree_dump(tree);
+	//bplus_tree_dump(tree);
 
 	return 0;
 }
