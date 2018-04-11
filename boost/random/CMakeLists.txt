@@ -1,0 +1,12 @@
+PROJECT(main)
+cmake_minimum_required(VERSION 3.2)
+
+FIND_PACKAGE( Boost COMPONENTS program_options	REQUIRED )
+#FIND_PACKAGE( Boost)
+INCLUDE_DIRECTORIES( ${Boost_INCLUDE_DIR} )
+
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+
+ADD_EXECUTABLE(main main.cpp)
+
+TARGET_LINK_LIBRARIES(main LINK_PUBLIC ${Boost_LIBRARIES} )

@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/mateng/learning-creating_by_cpp/boost/random/main.cpp
+boost/program_options/options_description.hpp
+-
+boost/program_options/option.hpp
+-
+iostream
+-
+
