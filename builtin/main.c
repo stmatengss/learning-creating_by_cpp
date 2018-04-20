@@ -97,6 +97,7 @@ void test12() {
 	printf("%d\n", __builtin_clz(0xff));
 	printf("%d\n", __builtin_clz(0xf));
 	printf("%d\n", __builtin_clz(0x0));
+	printf("%d\n", __builtin_popcount(0x0f0f));
 }
 
 int main() {
