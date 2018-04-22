@@ -1,0 +1,6 @@
+1. sudo insmod hello.ko name=xxxxx
+2. cat /proc/modules|grep hello
+3. /sys/module/hello
+4. cat /sys/module/hello/parameter/name \\ xxxxx
+5. rmmod hello
+6. tail /var/log/kern.log
