@@ -1,0 +1,1 @@
+cmd_/home/mateng/learning-creating_by_cpp/linux_kernel/module/hello.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/mateng/learning-creating_by_cpp/linux_kernel/module/hello.ko /home/mateng/learning-creating_by_cpp/linux_kernel/module/hello.o /home/mateng/learning-creating_by_cpp/linux_kernel/module/hello.mod.o
