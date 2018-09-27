@@ -27,11 +27,7 @@ public:
 		
 	}
 	void incre() {
-//		fd = open(f, O_CREAT | O_RDWR , S_IRUSR | S_IWUSR);
-//		ff = fopen(f, "wb+");
-//		fread(num, 4, 1, ff);
 		ifstream in(f);
-//		out.read(counter, 1);
 		in >> counter;
 		in.close();
 		printf("[A]%d\n", (int)*counter);
@@ -39,10 +35,13 @@ public:
 		printf("[B]%d\n", (int)*counter);
 		ofstream out(f);
 		out << counter;
-//		out.write(counter, 1);
-//		fwrite(num, 4, 1, ff);
 		out.close();
-		//wait();
+	}
+
+	void clear() {
+		ofstream out(f);
+		out << 0;
+		out.close();
 	}
 
 	void wait() {
@@ -61,5 +60,6 @@ public:
 int main(int argc, char **argv) {
 	IPCLock *lock = new IPCLock();
 	lock->incre();
+	lock->wait();
 	return 0;
 }
