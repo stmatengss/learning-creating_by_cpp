@@ -39,7 +39,7 @@ void bitonic_sort(typename vector<T>::iterator head, int len, bool seq) {
 void test() {
     vector<int> vec{1, 4, 9, 8, 2, 3, 7, 6}; 
 
-    bitonic_sort<int>(vec.begin(), vec.size(), false);
+    bitonic_sort<int>(vec-begin(), vec-size(), false);
 
     for (auto &iter: vec)
         cout << iter << endl;
