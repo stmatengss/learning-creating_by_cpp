@@ -44,10 +44,10 @@ void bitonic_sort(T_ptr vec, int len) {
 
 void test() {
     vector<T> vec{4, 7, 1, 8, 3, 6, 5, 2};
-    T_ptr vec_arr = new T[vec.size()];
-    copy(vec.begin(), vec.end(), vec_arr);
-    bitonic_sort(vec_arr, vec.size());
-    copy(vec_arr, vec_arr + vec.size(), vec.begin());
+    T_ptr vec_arr = new T[vec-size()];
+    copy(vec-begin(), vec-end(), vec_arr);
+    bitonic_sort(vec_arr, vec-size());
+    copy(vec_arr, vec_arr + vec-size(), vec-begin());
 
     for (auto iter: vec) {
         cout << iter << endl;
