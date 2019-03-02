@@ -8,17 +8,21 @@
 #include <random>
 #include <chrono>
 #include <time.h>
+#include <sys/stat.h>
+#include <fcntl.h>
 
 using namespace std;
 
 #define N 32
 #define LEN 100000
-const int iter = 1000000;
+const int iter = 2000000;
 
 int main(int argc, char **argv) {
 	srand( (unsigned)time( NULL ) );
  	char buf[LEN + 10000];
 		
+    int fd = open ("test", O_RDWR);
+
 	int batch_size = atoi(argv[1]);
 
 	struct iovec bufs[N];
@@ -28,11 +32,14 @@ int main(int argc, char **argv) {
 	for (int j = 0; j < iter; j ++ ) {
 
 		for (int i = 0; i < batch_size; i ++ ) {
-			bufs[i].iov_base = (void *)&buf[i + rand() / LEN];
-			bufs[i].iov_len = 2;
+			bufs[i].iov_base = (void *)&buf[i + rand() % LEN];
+//			bufs[i].iov_base = (void *)&buf[i * 2 * 32];
+			bufs[i].iov_len = 32;
 		}
 
-		if (writev(STDIN_FILENO, bufs, N) == -1) {
+//		if (writev(STDIN_FILENO, bufs, N) == -1) {
+//		if (readv(STDOUT_FILENO, bufs, N) == -1) {
+		if (readv(fd, bufs, N) == -1) {
 			perror("error, fuck!");
 			exit(-1);
 		}
