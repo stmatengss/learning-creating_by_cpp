@@ -1,7 +1,17 @@
 #include <immintrin.h>
-#include <pthread.h>
-#include <stdio.h>
-#include <unistd.h>
+#include <stdlib.h>
+
+#define _xbegin() {\
+        __asm__ __volatile__ (".byte 0xc7, 0xf8, 0xfa, 0xff, 0xff, 0xff":::"eax") ;\
+        }
+
+#define _xend() {\
+        __asm__ __volatile__ (".byte 0x0f, 0x01, 0xd5") ;\
+        }
+
+#define _xabort(byte) {\
+        __asm__ __volatile__ (".byte 0xc6, 0xf8, " #byte :::"eax") ;\
+        }
 
 int main() {
 	
