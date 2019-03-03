@@ -8,9 +8,9 @@ int main() {
 	auto res = _xtest();
 
 	if (res) {
-		printf("Support\n");
+		printf("During Transaction\n");
 	} else {
-		printf("Not support\n");
+		printf("Not During Transaction\n");
 	}
 
 	int *g = (int *)malloc(sizeof(int));
@@ -19,10 +19,26 @@ int main() {
 		int status = _xbegin(); // set status = -1 and start transaction
 		if (status == _XBEGIN_STARTED) { // status == XBEGIN_STARTED == -1
 			(*g) ++; // non atomic increment of shared global variable
+
+			res = _xtest();
+
+#if 0
+			if (res) {
+				printf("During Transaction\n");
+			} else {
+				printf("Not During Transaction\n");
+			}
+#endif
 			_xend(); // end transaction
+
+			if (res) {
+				printf("During Transaction\n");
+			} else {
+				printf("Not During Transaction\n");
+			}
 			break; // break on success
 		} else { //
-	
+			_xabort(0xFF);	
 		} //
 	}
 }
