@@ -8,7 +8,7 @@ using namespace std;
 atomic_flag locked = ATOMIC_FLAG_INIT;
 
 inline void lock() {
- 	locked.test_and_set(std::memory_order_acquire);
+ 	while(!locked.test_and_set(std::memory_order_acquire));
 }
 
 inline void unlock() {
@@ -29,7 +29,8 @@ void f() {
 	}
 }
 
-int main() {
+int main(int argc, char** argv) {
+    thread_num = atoi(argv[1]);
 	thread a[thread_num];
 
 	for (int i = 0; i < thread_num; i ++ ) {
