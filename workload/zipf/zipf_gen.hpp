@@ -51,7 +51,7 @@ public:
         for (int i = 1; i <= item_max; i ++ ) {
             value[i - 1] = i;
         }
-        std::shuffle(value, value + item_max, g);
+//        std::shuffle(value, value + item_max, g);
     }
 
     ll next_long() {
