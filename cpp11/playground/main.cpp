@@ -17,5 +17,6 @@ class F{
 int main() {
     auto p = new char[1<<10];
     auto f = new (p) F();
+    
     return 0;
 }
