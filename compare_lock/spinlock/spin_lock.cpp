@@ -7,6 +7,7 @@
 using namespace std;
 
 #define HAS_LOCK
+#define USE_LOCK
 
 typedef volatile uint32_t lock_t;
 
@@ -38,12 +39,16 @@ void f() {
 
 	for (int i = 0; i < limit_iter; i ++ ) {
 // 		asm("LOCK");
+#ifdef USE_LOCK
 #ifdef HAS_LOCK
 		lock();
 #endif
 		counter ++;
 #ifdef HAS_LOCK
 		unlock();
+#endif
+#else
+		__sync_fetch_and_add(&lock_val, 1);
 #endif
 	}
     

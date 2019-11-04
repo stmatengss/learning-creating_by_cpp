@@ -1,1 +1,1 @@
-for((i=1;i<9;i++)) do ./spin_lock 9; ./spin_lock 9; done
+for((i=1;i<17;i++)) do ./spin_lock $i; done
