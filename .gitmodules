@@ -1,0 +1,3 @@
+[submodule "hpx-mm"]
+	path = hpx-mm
+	url = git@github.com:stmatengss/hpx-matrix-mul.git
